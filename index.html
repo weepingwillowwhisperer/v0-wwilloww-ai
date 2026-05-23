@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f1ece1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#16201d" media="(prefers-color-scheme: dark)" />
+
+    <title>wwilloww.ai — calm PDF guides for neurodivergent students</title>
+    <meta
+      name="description"
+      content="wwilloww.ai is a quiet, student-first studio making accessible PDF guides, templates, and study supports for neurodivergent learners from high school through postgraduate research."
+    />
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="wwilloww.ai" />
+    <meta property="og:title" content="wwilloww.ai — calm PDF guides for neurodivergent students" />
+    <meta
+      property="og:description"
+      content="Accessible PDF guides, templates, and study supports for neurodivergent students. Designed with tagged structure, plain-language summaries, and alt text. Coming soon — join the waitlist."
+    />
+    <meta property="og:url" content="https://wwilloww.ai/" />
+    <meta property="og:image" content="https://wwilloww.ai/og.png" />
+    <meta property="og:image:alt" content="A willow leaf mark beside the wordmark wwilloww.ai on a warm sand background." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="wwilloww.ai — calm PDF guides for neurodivergent students" />
+    <meta
+      name="twitter:description"
+      content="Accessible PDFs for neurodivergent learners across high school, undergrad, grad, and postgrad. Join the waitlist."
+    />
+
+    <!-- Fonts: Fontshare (Boska editorial display + Supreme readable sans body) -->
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=boska@500,600,700&f[]=supreme@400,500,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Favicon: inline SVG -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23f1ece1'/><path d='M16 5c-5 4-7 9-7 13 0 5 3 8 7 8s7-3 7-8c0-4-2-9-7-13z' fill='none' stroke='%232f5d52' stroke-width='2' stroke-linejoin='round'/><path d='M16 9v17' stroke='%232f5d52' stroke-width='1.5' stroke-linecap='round'/></svg>"
+      type="image/svg+xml"
+    />
+
+    <!-- JSON-LD: organization + website -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "wwilloww.ai",
+        "url": "https://wwilloww.ai/",
+        "description": "Accessible PDF study guides for neurodivergent students.",
+        "sameAs": []
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+      <div class="container header-row">
+        <a class="brand" href="#top" aria-label="wwilloww.ai home">
+          <svg
+            class="brand-mark"
+            width="36"
+            height="36"
+            viewBox="0 0 40 40"
+            aria-hidden="true"
+            fill="none"
+          >
+            <!-- Willow-leaf mark with central stem -->
+            <path
+              d="M20 4c-6 5-9 11-9 16 0 6 4 10 9 10s9-4 9-10c0-5-3-11-9-16z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linejoin="round"
+              fill="none"
+            />
+            <path d="M20 9v22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M20 17l-4 2M20 22l4 2M20 13l3-1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity=".7" />
+          </svg>
+          <span class="brand-word">wwilloww<span class="brand-dot">.</span>ai</span>
+        </a>
+
+        <nav class="primary-nav" aria-label="Primary">
+          <a href="#library">Library</a>
+          <a href="#featured">Featured</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            type="button"
+            class="theme-toggle"
+            id="themeToggle"
+            aria-pressed="false"
+            aria-label="Switch to dark mode"
+            title="Toggle dark mode"
+          >
+            <svg class="icon icon-sun" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+            </svg>
+            <svg class="icon icon-moon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+            </svg>
+          </button>
+          <a class="btn btn-primary btn-sm" href="#waitlist">Join the waitlist</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <!-- HERO -->
+      <section class="hero" id="top" aria-labelledby="hero-heading">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span class="dot" aria-hidden="true"></span>
+              Accessible PDFs, opening quietly soon
+            </p>
+            <h1 id="hero-heading" class="display">
+              Study tools that work with your nervous system,
+              <span class="text-accent">not against your brain.</span>
+            </h1>
+            <p class="lede">
+              wwilloww.ai makes low-friction PDF guides, planners, and scripts
+              for neurodivergent students &mdash; from high school through postgraduate
+              research. Every resource is designed for screen readers, printing,
+              skimming, and the days when starting is the hardest part.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
+              <a class="btn btn-ghost" href="#library">Preview the PDF library
+                <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+            <ul class="audience-chips" aria-label="Who this is for">
+              <li>High school</li>
+              <li>Undergraduate</li>
+              <li>Graduate</li>
+              <li>Postgraduate &amp; postdoc</li>
+            </ul>
+          </div>
+
+          <aside class="hero-card" aria-label="Snapshot of the first release">
+            <div class="hero-card-inner">
+              <div class="card-tag">First release · Launch cohort</div>
+              <h2 class="hero-card-title">The First Five Minutes Kit</h2>
+              <p class="hero-card-body">
+                A 32-page PDF for turning the foggy beginning of a task into
+                one clear next move, with a weekly anchor page, triage card,
+                transition script, and printable focus mats.
+              </p>
+              <ul class="hero-card-meta">
+                <li><strong>Format</strong><span>Tagged PDF · A4 + Letter</span></li>
+                <li><strong>Reading level</strong><span>Plain language, grade 7</span></li>
+                <li><strong>Print &amp; screen</strong><span>High-contrast variants</span></li>
+              </ul>
+              <p class="coming-soon">
+                <span class="cs-dot" aria-hidden="true"></span> Coming soon
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ABOUT / POSITIONING -->
+      <section class="section about" id="about" aria-labelledby="about-heading">
+        <div class="container two-col">
+          <div class="col-narrow">
+            <p class="kicker">About</p>
+            <h2 id="about-heading" class="display-sm">
+              We make the resource you wish someone had quietly handed you
+              before the semester got loud.
+            </h2>
+          </div>
+          <div class="col-wide prose">
+            <p>
+              wwilloww.ai began with a simple question: what would academic support
+              look like if it assumed an ADHD, autistic, dyslexic, dyspraxic,
+              chronically tired, or twice-exceptional brain from the first draft?
+            </p>
+            <p>
+              Every guide is written as a practical tool, not a pep talk. The goal
+              is to make the next academic action smaller, clearer, and kinder:
+              an email you can send, a reading system you can restart, a study plan
+              that leaves room for sensory load and recovery.
+            </p>
+            <p>
+              We are a tiny independent studio. Quiet by design, plain on purpose,
+              and committed to accessible PDFs as the product itself.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCT GRID -->
+      <section class="section library" id="library" aria-labelledby="library-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="kicker">The library</p>
+            <h2 id="library-heading" class="display-sm">Seven PDFs in the first release set.</h2>
+            <p class="section-lede">
+              Each title is being drafted now and will open as a coming-soon
+              waitlist before checkout goes live. Tap <em>Notify me</em> on the
+              ones you want first, or join once for the whole library.
+            </p>
+          </header>
+
+          <ul class="product-grid" role="list">
+            <li class="product-card">
+              <div class="product-thumb" aria-hidden="true">
+                <span class="thumb-tag">Start · 32pp</span>
+                <svg viewBox="0 0 100 100" width="100%" height="100%"><circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" stroke-width="2"/><path d="M30 50h40M50 30v40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <div class="product-body">
+                <p class="product-cat">Starting tasks</p>
+                <h3>The First Five Minutes Kit</h3>
+                <p>A task-starting kit for the moment before momentum exists: a weekly anchor page, triage card, transition scripts, and three printable focus mats.</p>
+                <p class="status" aria-label="Status: Coming soon">Coming soon</p>
+                <a class="btn btn-ghost btn-sm" href="#waitlist" aria-label="Notify me when The First Five Minutes Kit is released">Notify me</a>
+              </div>
+            </li>
+
+            <li class="product-card">
+              <div class="product-thumb" aria-hidden="true">
+                <span class="thumb-tag">Energy · 18pp</span>
+                <svg viewBox="0 0 100 100" width="100%" height="100%"><path d="M20 70c10-30 50-30 60 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="50" cy="40" r="6" fill="currentColor"/></svg>
+              </div>
+              <div class="product-body">
+                <p class="product-cat">Planning around capacity</p>
+                <h3>The Low-Sensory Study Planner</h3>
+                <p>A weekly planner that accounts for energy, sensory load, transition cost, and recovery time &mdash; not just deadlines and empty boxes.</p>
+                <p class="status">Coming soon</p>
+                <a class="btn btn-ghost btn-sm" href="#waitlist" aria-label="Notify me when The Low-Sensory Study Planner is released">Notify me</a>
+              </div>
+            </li>
+
+            <li class="product-card">
+              <div class="product-thumb" aria-hidden="true">
+                <span class="thumb-tag">Thesis · 40pp</span>
+                <svg viewBox="0 0 100 100" width="100%" height="100%"><path d="M15 75 L40 45 L60 60 L85 25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="85" cy="25" r="3" fill="currentColor"/></svg>
+              </div>
+              <div class="product-body">
+                <p class="product-cat">Graduate research</p>
+                <h3>The Thesis Momentum Map</h3>
+                <p>A non-linear thesis tracker for stall-and-surge writing patterns, with chapter weather reports, next-action lanes, and a supervisor-meeting template.</p>
+                <p class="status">Coming soon</p>
+                <a class="btn btn-ghost btn-sm" href="#waitlist" aria-label="Notify me when The Thesis Momentum Map is released">Notify me</a>
+              </div>
+            </li>
+
+            <li class="product-card">
+              <div class="product-thumb" aria-hidden="true">
+                <span class="thumb-tag">Scripts · 22pp</span>
+                <svg viewBox="0 0 100 100" width="100%" height="100%"><rect x="22" y="22" width="56" height="56" rx="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M32 40h36M32 52h28M32 64h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <div class="product-body">
+                <p class="product-cat">Self-advocacy</p>
+                <h3>The Ask-Safely Script Pack</h3>
+                <p>Ready-to-edit templates for emailing instructors, advisors, and disability services when your brain will not let you start from a blank page.</p>
+                <p class="status">Coming soon</p>
+                <a class="btn btn-ghost btn-sm" href="#waitlist" aria-label="Notify me when The Ask-Safely Script Pack is released">Notify me</a>
+              </div>
+            </li>
+
+            <li class="product-card">
+              <div class="product-thumb" aria-hidden="true">
+                <span class="thumb-tag">Exams · 24pp</span>
+                <svg viewBox="0 0 100 100" width="100%" height="100%"><circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="2"/><path d="M50 30v22l14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <div class="product-body">
+                <p class="product-cat">Regulation</p>
+                <h3>The Exam Week Soft Landing</h3>
+                <p>A nervous-system-first plan for the seven days around an exam: sleep, fuel, movement, sensory buffers, and recovery checklists.</p>
+                <p class="status">Coming soon</p>
+                <a class="btn btn-ghost btn-sm" href="#waitlist" aria-label="Notify me when The Exam Week Soft Landing is released">Notify me</a>
+              </div>
+            </li>
+
+            <li class="product-card">
+              <div class="product-thumb" aria-hidden="true">
+                <span class="thumb-tag">Reading · 28pp</span>
+                <svg viewBox="0 0 100 100" width="100%" height="100%"><path d="M22 22h56v40c0 9-7 16-16 16H38c-9 0-16-7-16-16z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M34 36h32M34 48h32M34 60h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <div class="product-body">
+                <p class="product-cat">Reading method</p>
+                <h3>The Dense Reading Decoder</h3>
+                <p>A six-step method for academic reading when the same paragraph keeps vanishing. Includes a one-page annotation key and a restart protocol.</p>
+                <p class="status">Coming soon</p>
+                <a class="btn btn-ghost btn-sm" href="#waitlist" aria-label="Notify me when The Dense Reading Decoder is released">Notify me</a>
+              </div>
+            </li>
+
+            <li class="product-card">
+              <div class="product-thumb" aria-hidden="true">
+                <span class="thumb-tag">Recovery · 20pp</span>
+                <svg viewBox="0 0 100 100" width="100%" height="100%"><path d="M20 60c12 0 12-12 24-12s12 12 24 12 12-12 24-12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <div class="product-body">
+                <p class="product-cat">Recovery</p>
+                <h3>The After-Burnout Re-Entry Checklist</h3>
+                <p>A gentle, staged checklist for the term after the term that broke you, with permission slips and a worksheet for doing less on purpose.</p>
+                <p class="status">Coming soon</p>
+                <a class="btn btn-ghost btn-sm" href="#waitlist" aria-label="Notify me when The After-Burnout Re-Entry Checklist is released">Notify me</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- FEATURED -->
+      <section class="section featured" id="featured" aria-labelledby="featured-heading">
+        <div class="container featured-grid">
+          <div class="featured-art" aria-hidden="true">
+            <div class="featured-art-stack">
+              <div class="paper paper-back"></div>
+              <div class="paper paper-mid"></div>
+              <div class="paper paper-front">
+                <div class="paper-bar"></div>
+                <div class="paper-line"></div>
+                <div class="paper-line short"></div>
+                <div class="paper-line"></div>
+                <div class="paper-line short"></div>
+                <div class="paper-block"></div>
+                <div class="paper-line"></div>
+                <div class="paper-line short"></div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-body">
+            <p class="kicker">Featured · launching first</p>
+            <h2 id="featured-heading" class="display-sm">
+              The First Five Minutes Kit
+            </h2>
+            <p class="lede">
+              A 32-page PDF for the fragile beginning of a study session, when
+              “just start” is not useful advice. Designed to be skimmed,
+              re-skimmed, printed, or read on a phone in the library bathroom at
+              11 p.m.
+            </p>
+            <ul class="feature-list" role="list">
+              <li>
+                <span class="bullet" aria-hidden="true"></span>
+                <span>Single-page weekly anchor with energy bands, not hour blocks.</span>
+              </li>
+              <li>
+                <span class="bullet" aria-hidden="true"></span>
+                <span>Task triage card: <em>now / soon / later / not for me</em>.</span>
+              </li>
+              <li>
+                <span class="bullet" aria-hidden="true"></span>
+                <span>Transition scripts for context-switching between classes, labs, and rest.</span>
+              </li>
+              <li>
+                <span class="bullet" aria-hidden="true"></span>
+                <span>Three printable focus mats &mdash; minimal, mid, and tactile variants.</span>
+              </li>
+              <li>
+                <span class="bullet" aria-hidden="true"></span>
+                <span>Plain-language summary on every section, with tagged structure and screen-reader checks before release.</span>
+              </li>
+            </ul>
+            <a class="btn btn-primary" href="#waitlist">Get launch updates</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- OUTCOMES -->
+      <section class="section outcomes" id="outcomes" aria-labelledby="outcomes-heading">
+        <div class="container">
+          <header class="section-head center">
+            <p class="kicker">Designed for</p>
+            <h2 id="outcomes-heading" class="display-sm">
+              The hard parts &mdash; not the inspirational poster version.
+            </h2>
+          </header>
+
+          <ul class="outcomes-grid" role="list">
+            <li>
+              <p class="outcome-stat">01</p>
+              <h3>Starting</h3>
+              <p>Tools for the wall between deciding to study and actually beginning. Triage cards, transition scripts, and tiny first actions.</p>
+            </li>
+            <li>
+              <p class="outcome-stat">02</p>
+              <h3>Staying</h3>
+              <p>Sustaining attention without grinding. Energy-band planners, body-doubling cues, and re-entry prompts after interruptions.</p>
+            </li>
+            <li>
+              <p class="outcome-stat">03</p>
+              <h3>Asking</h3>
+              <p>Self-advocacy scripts for emailing professors, requesting accommodations, and naming what you need without rehearsing it for a week.</p>
+            </li>
+            <li>
+              <p class="outcome-stat">04</p>
+              <h3>Recovering</h3>
+              <p>Post-deadline, post-exam, post-meltdown checklists. Permission-to-rest worksheets that actually let you rest.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS / SOCIAL PROOF -->
+      <section class="section quotes" id="quotes" aria-labelledby="quotes-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="kicker">How we make decisions</p>
+            <h2 id="quotes-heading" class="display-sm">
+              A storefront for students who are tired of being treated like an edge case.
+            </h2>
+          </header>
+
+          <div class="quote-grid">
+            <figure class="quote">
+              <blockquote>
+                <p>We design for the moment when a student has already spent their energy explaining themselves. The resource has to be usable before the perfect context exists.</p>
+              </blockquote>
+              <figcaption>
+                <span class="quote-name">Low-friction first</span>
+                <span class="quote-role">Short sections, clear labels, printable layouts</span>
+              </figcaption>
+            </figure>
+
+            <figure class="quote">
+              <blockquote>
+                <p>We avoid shame-based productivity language. If a tool only works on a perfect day, it is not finished yet.</p>
+              </blockquote>
+              <figcaption>
+                <span class="quote-name">No moralizing</span>
+                <span class="quote-role">No hustle copy, no fake urgency</span>
+              </figcaption>
+            </figure>
+
+            <figure class="quote">
+              <blockquote>
+                <p>Every PDF should work on screen, on paper, and under stress. That means generous spacing, logical reading order, and high-contrast variants.</p>
+              </blockquote>
+              <figcaption>
+                <span class="quote-name">Access built in</span>
+                <span class="quote-role">Tagged PDFs, summaries, alt text, contrast checks</span>
+              </figcaption>
+            </figure>
+
+            <figure class="quote">
+              <blockquote>
+                <p>The first release is intentionally small. We would rather make seven useful PDFs slowly than launch a giant library no one can navigate.</p>
+              </blockquote>
+              <figcaption>
+                <span class="quote-name">Small library, high care</span>
+                <span class="quote-role">Coming soon, then improved with reader feedback</span>
+              </figcaption>
+            </figure>
+          </div>
+          <p class="micro-note">Launch note: reader testimonials will appear here only after the first public beta group has given explicit permission.</p>
+        </div>
+      </section>
+
+      <!-- WAITLIST / NEWSLETTER -->
+      <section class="section waitlist" id="waitlist" aria-labelledby="waitlist-heading">
+        <div class="container waitlist-grid">
+          <div>
+            <p class="kicker">Waitlist</p>
+            <h2 id="waitlist-heading" class="display-sm">Get launch updates.</h2>
+            <p class="lede">
+              One short email when each PDF is ready. No drip campaign, no
+              countdown timers, no urgency theatre. Join once and we will send
+              only launch notes, access updates, and occasional beta invitations.
+            </p>
+            <ul class="waitlist-promises" role="list">
+              <li>Roughly one email a month, at most.</li>
+              <li>Plain text option in every send.</li>
+              <li>Your address is never sold or shared.</li>
+            </ul>
+          </div>
+
+          <form class="waitlist-form" novalidate aria-describedby="form-help" id="waitlistForm">
+            <div class="field">
+              <label for="email">Email address</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                aria-required="true"
+                placeholder="you@school.edu"
+              />
+            </div>
+
+            <fieldset class="field field-group">
+              <legend>Which stage are you in? <span class="muted">(optional)</span></legend>
+              <div class="checks">
+                <label><input type="checkbox" name="stage" value="high-school" /> High school</label>
+                <label><input type="checkbox" name="stage" value="undergrad" /> Undergrad</label>
+                <label><input type="checkbox" name="stage" value="grad" /> Graduate</label>
+                <label><input type="checkbox" name="stage" value="postgrad" /> Postgrad / postdoc</label>
+                <label><input type="checkbox" name="stage" value="supporter" /> Educator or supporter</label>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary btn-block">Join the waitlist</button>
+            <p id="form-help" class="form-help">
+              We will email you only about wwilloww.ai PDFs and beta invitations. Your signup will be saved in our private waitlist sheet.
+            </p>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section faq" id="faq" aria-labelledby="faq-heading">
+        <div class="container two-col">
+          <div class="col-narrow">
+            <p class="kicker">FAQ</p>
+            <h2 id="faq-heading" class="display-sm">Common questions, plainly answered.</h2>
+            <p class="muted">
+              Don't see yours? Email <a href="mailto:hello@wwilloww.ai">hello@wwilloww.ai</a>.
+            </p>
+          </div>
+          <div class="col-wide">
+            <div class="accordion" role="list">
+              <details class="faq-item" role="listitem">
+                <summary>
+                  <span>When does the first PDF launch?</span>
+                  <span class="chev" aria-hidden="true">＋</span>
+                </summary>
+                <div class="faq-body">
+                  <p>The First Five Minutes Kit goes out to waitlist subscribers first. The remaining six titles will follow in small batches so each release can be checked for accessibility and revised from reader feedback.</p>
+                </div>
+              </details>
+
+              <details class="faq-item" role="listitem">
+                <summary>
+                  <span>Are the PDFs really accessible, or is "accessible" just marketing?</span>
+                  <span class="chev" aria-hidden="true">＋</span>
+                </summary>
+                <div class="faq-body">
+                  <p>Every PDF is planned with tagged document structure, a logical reading order, plain-language section summaries, and alt text for every meaningful image. Before selling a title, we will check screen-reader flow and publish plain accessibility notes. If something fails for you, we want to know and we will fix it.</p>
+                </div>
+              </details>
+
+              <details class="faq-item" role="listitem">
+                <summary>
+                  <span>Will there be print-friendly and screen-friendly versions?</span>
+                  <span class="chev" aria-hidden="true">＋</span>
+                </summary>
+                <div class="faq-body">
+                  <p>Yes. Each title ships in A4 and US Letter, with a high-contrast print variant and a low-stimulation screen variant. The screen variant avoids large solid colour blocks and uses a calmer palette.</p>
+                </div>
+              </details>
+
+              <details class="faq-item" role="listitem">
+                <summary>
+                  <span>Who is wwilloww.ai for, exactly?</span>
+                  <span class="chev" aria-hidden="true">＋</span>
+                </summary>
+                <div class="faq-body">
+                  <p>Students with ADHD, autism, dyslexia, dyspraxia, dyscalculia, Tourette's, and other neurodivergent profiles &mdash; diagnosed or self-identifying &mdash; from high school through postdoctoral work. Allistic students, instructors, and disability services staff are very welcome too; the materials were designed to be useful, not gatekept.</p>
+                </div>
+              </details>
+
+              <details class="faq-item" role="listitem">
+                <summary>
+                  <span>How will pricing work?</span>
+                  <span class="chev" aria-hidden="true">＋</span>
+                </summary>
+                <div class="faq-body">
+                  <p>Individual PDFs will be modestly priced, with a name-your-price option that goes down to free for students who need it &mdash; no form, no proof, no questions. Institutional licences for disability services teams will be available at a separate rate.</p>
+                </div>
+              </details>
+
+              <details class="faq-item" role="listitem">
+                <summary>
+                  <span>Is there an AI chatbot or training-data thing here?</span>
+                  <span class="chev" aria-hidden="true">＋</span>
+                </summary>
+                <div class="faq-body">
+                  <p>No. The <code>.ai</code> in the name is a domain choice, not a product. The PDFs are written by humans, reviewed by humans, and tested by neurodivergent humans. We do not sell your data and we do not train models on subscriber content.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACCESSIBILITY STATEMENT -->
+      <section class="section a11y" id="accessibility" aria-labelledby="a11y-heading">
+        <div class="container a11y-card">
+          <div class="a11y-mark" aria-hidden="true">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="4.5" r="1.5" fill="currentColor"/>
+              <path d="M5 8h14"/>
+              <path d="M12 8v6"/>
+              <path d="M12 14l-3 6M12 14l3 6"/>
+            </svg>
+          </div>
+          <div>
+            <p class="kicker">Accessibility statement</p>
+            <h2 id="a11y-heading" class="display-sm">Accessibility is the product, not a footer link.</h2>
+            <p>
+              We design wwilloww.ai PDFs and this site to meet
+              <strong>WCAG 2.2 AA</strong> as a floor, not a ceiling.
+              In practice, that means:
+            </p>
+            <ul class="a11y-list" role="list">
+              <li>Tagged PDF structure with a logical reading order and bookmarks.</li>
+              <li>Plain-language summaries at the top of every section.</li>
+              <li>Alt text for all meaningful images and diagrams; decorative imagery is marked as such.</li>
+              <li>4.5:1 minimum contrast for body text, visible keyboard focus, and no information conveyed by colour alone.</li>
+              <li>A reduced-motion mode that honours <code>prefers-reduced-motion</code>. Nothing autoplays, nothing flashes.</li>
+              <li>A dark mode that respects your system setting.</li>
+            </ul>
+            <p>
+              If a PDF, page, or form ever blocks you, email
+              <a href="mailto:access@wwilloww.ai">access@wwilloww.ai</a>
+              and we'll respond within five working days &mdash; with a fix or an honest timeline.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section contact" id="contact" aria-labelledby="contact-heading">
+        <div class="container contact-grid">
+          <div>
+            <p class="kicker">Contact</p>
+            <h2 id="contact-heading" class="display-sm">A small studio, real humans.</h2>
+            <p class="muted">
+              Email is the best way to reach us. We read everything within a few days.
+            </p>
+          </div>
+          <ul class="contact-list" role="list">
+            <li>
+              <span class="contact-label">General</span>
+              <a href="mailto:hello@wwilloww.ai">hello@wwilloww.ai</a>
+            </li>
+            <li>
+              <span class="contact-label">Accessibility</span>
+              <a href="mailto:access@wwilloww.ai">access@wwilloww.ai</a>
+            </li>
+            <li>
+              <span class="contact-label">Institutions &amp; licensing</span>
+              <a href="mailto:institutions@wwilloww.ai">institutions@wwilloww.ai</a>
+            </li>
+            <li>
+              <span class="contact-label">Press</span>
+              <a href="mailto:press@wwilloww.ai">press@wwilloww.ai</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#top" aria-label="wwilloww.ai home">
+            <svg class="brand-mark" width="32" height="32" viewBox="0 0 40 40" aria-hidden="true" fill="none">
+              <path d="M20 4c-6 5-9 11-9 16 0 6 4 10 9 10s9-4 9-10c0-5-3-11-9-16z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+              <path d="M20 9v22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            <span class="brand-word">wwilloww<span class="brand-dot">.</span>ai</span>
+          </a>
+          <p class="footer-tag">Calm PDF guides for neurodivergent students.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <div>
+            <h3>Studio</h3>
+            <ul role="list">
+              <li><a href="#about">About</a></li>
+              <li><a href="#library">Library</a></li>
+              <li><a href="#featured">Featured</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>For readers</h3>
+            <ul role="list">
+              <li><a href="#waitlist">Waitlist</a></li>
+              <li><a href="#accessibility">Accessibility</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Legal</h3>
+            <ul role="list">
+              <li><a href="#privacy">Privacy</a></li>
+              <li><a href="#terms">Terms</a></li>
+              <li><a href="mailto:hello@wwilloww.ai">Email us</a></li>
+            </ul>
+          </div>
+        </nav>
+        <p class="footer-meta">
+          © <span id="year">2025</span> wwilloww.ai &middot; Made quietly, with care.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
