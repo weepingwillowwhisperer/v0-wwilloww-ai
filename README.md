@@ -1,35 +1,40 @@
-# v0-wwilloww-ai
+# wwilloww.ai
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+Storefront for calm, accessible PDF study guides for neurodivergent students (high school through postgraduate).
 
-## Built with v0
+Live: https://www.wwilloww.ai
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+## What's here
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_z6LHrRI2rQuQeaMGqc35xK0OiBov)
+| Path | Purpose |
+| --- | --- |
+| `index.html` | The whole storefront (single page) |
+| `styles.css` | Willow palette, light/dark themes, responsive layout |
+| `script.js` | Theme toggle, FAQ accordion, waitlist form |
+| `api/waitlist.js` | Vercel serverless function that saves waitlist signups to Google Sheets |
+| `vercel.json` | Clean URLs and security headers |
 
-## Getting Started
+There is no build step. Vercel serves the static files as-is and runs `api/waitlist.js` as a function.
 
-First, run the development server:
+## Deploying
+
+The Vercel project `wwilloww-ai` is connected to this repo. Every push to `main` deploys to production at `wwilloww.ai`. Other branches get preview URLs.
+
+Domain: registered at Wix, DNS points to Vercel (`A @ 76.76.21.21`, `CNAME www cname.vercel-dns.com`). Keep the Google Workspace MX/TXT records in Wix unchanged.
+
+## Waitlist setup
+
+`api/waitlist.js` saves signups using one of two options, set as Vercel environment variables:
+
+1. **Google Apps Script webhook (simplest):** `WAITLIST_WEBHOOK_URL`
+2. **Google service account:** `GOOGLE_SHEET_ID`, `GOOGLE_SHEET_NAME` (default `Signups`), `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_PRIVATE_KEY`
+
+If neither is set, the form returns a "temporarily unavailable" message.
+
+## Local development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm install
+npm run dev     # serves the site at http://localhost:3000 (API not included)
+npm run check   # syntax-check the JavaScript
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
-
-<a href="https://v0.app/chat/api/kiro/clone/weepingwillowwhisperer/v0-wwilloww-ai" alt="Open in Kiro"><img src="https://pdgvvgmkdvyeydso.public.blob.vercel-storage.com/open%20in%20kiro.svg?sanitize=true" /></a>
