@@ -1506,3 +1506,32 @@ h3 {
     color: #000;
   }
 }
+
+/* ============================================================
+   Live product (available on Payhip)
+   ============================================================ */
+
+.product-body .status.status-live,
+.coming-soon.is-live,
+[data-theme="dark"] .coming-soon.is-live {
+  color: var(--willow);
+}
+
+[data-theme="dark"] .product-body .status.status-live {
+  color: var(--sage);
+}
+
+.product-body .status.status-live::before,
+.coming-soon.is-live .cs-dot {
+  background: var(--willow);
+}
+
+[data-theme="dark"] .product-body .status.status-live::before,
+[data-theme="dark"] .coming-soon.is-live .cs-dot {
+  background: var(--sage);
+}
+
+.hero-card-buy {
+  margin-left: var(--space-4);
+  vertical-align: middle;
+}
