@@ -142,7 +142,7 @@
             email: value,
             stage: getCheckedValues("stage"),
             product_interest: "whole library",
-            source: "wwilloww.ai waitlist form",
+            source: "willowpdf.com updates form",
             consent: "yes",
             notes: "",
           }),

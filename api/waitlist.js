@@ -28,7 +28,7 @@ function buildRow(payload, req) {
     cleanText(payload.email, '', 254).toLowerCase(),
     stage,
     cleanText(payload.product_interest, 'whole library', 200),
-    cleanText(payload.source, 'wwilloww.ai waitlist form', 200),
+    cleanText(payload.source, 'willowpdf.com updates form', 200),
     cleanText(payload.consent, 'yes', 40),
     cleanText(payload.notes, '', 500) || `ip:${req.headers['x-forwarded-for'] || 'unknown'}`,
   ];
@@ -80,7 +80,7 @@ async function appendViaWebhook(payload, req) {
       email: cleanText(payload.email, '', 254).toLowerCase(),
       stage: Array.isArray(payload.stage) ? payload.stage : [],
       product_interest: cleanText(payload.product_interest, 'whole library', 200),
-      source: cleanText(payload.source, 'wwilloww.ai waitlist form', 200),
+      source: cleanText(payload.source, 'willowpdf.com updates form', 200),
       consent: cleanText(payload.consent, 'yes', 40),
       notes: cleanText(payload.notes, '', 500),
       visitor: req.headers['x-forwarded-for'] || '',
