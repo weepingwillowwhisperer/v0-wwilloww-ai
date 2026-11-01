@@ -117,7 +117,7 @@ export default async function handler(req, res) {
 
     return res.status(201).json({
       ok: true,
-      message: 'Thanks — you are on the waitlist. We will email you when the first PDF is ready.',
+      message: 'Thanks — you are on the list. We will email you when a new PDF is ready.',
     });
   } catch (error) {
     console.error('Waitlist submission failed:', error);

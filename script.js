@@ -161,7 +161,7 @@
       } finally {
         if (submit) {
           submit.disabled = false;
-          submit.textContent = "Join the waitlist";
+          submit.textContent = "Get updates";
         }
       }
     });
