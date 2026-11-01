@@ -34,6 +34,42 @@ function buildRow(payload, req) {
   ];
 }
 
+// Default destination: private Google Form owned by the Willow Google account.
+// Responses are visible in Google Forms (Responses tab) and can be linked to a Sheet.
+const GOOGLE_FORM_RESPONSE_URL =
+  process.env.GOOGLE_FORM_RESPONSE_URL ||
+  'https://docs.google.com/forms/d/e/1FAIpQLSdkkDxTs4dzpCKrj7fYQjegAMxFDsVCSsWDvDZacPKDqyV1QQ/formResponse';
+const GOOGLE_FORM_FIELDS = {
+  email: 'entry.304839667',
+  stage: 'entry.1140973285',
+  source: 'entry.389250673',
+  timestamp: 'entry.40120481',
+};
+
+async function appendViaGoogleForm(payload) {
+  const body = new URLSearchParams();
+  body.set(GOOGLE_FORM_FIELDS.email, cleanText(payload.email, '', 254).toLowerCase());
+  body.set(
+    GOOGLE_FORM_FIELDS.stage,
+    Array.isArray(payload.stage)
+      ? payload.stage.map((item) => cleanText(item, '', 80)).filter(Boolean).join(', ')
+      : cleanText(payload.stage, '', 200)
+  );
+  body.set(GOOGLE_FORM_FIELDS.source, cleanText(payload.source, 'willowpdf.com updates form', 200));
+  body.set(GOOGLE_FORM_FIELDS.timestamp, new Date().toISOString());
+
+  const response = await fetch(GOOGLE_FORM_RESPONSE_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: body.toString(),
+    redirect: 'manual',
+  });
+
+  if (response.status >= 400) {
+    throw new Error(`Google Form returned ${response.status}`);
+  }
+}
+
 async function appendViaWebhook(payload, req) {
   const endpoint = process.env.WAITLIST_WEBHOOK_URL;
   const response = await fetch(endpoint, {
@@ -111,8 +147,10 @@ export default async function handler(req, res) {
   try {
     if (process.env.WAITLIST_WEBHOOK_URL) {
       await appendViaWebhook({ ...payload, email }, req);
-    } else {
+    } else if (process.env.GOOGLE_SHEET_ID) {
       await appendViaGoogleServiceAccount({ ...payload, email }, req);
+    } else {
+      await appendViaGoogleForm({ ...payload, email });
     }
 
     return res.status(201).json({
