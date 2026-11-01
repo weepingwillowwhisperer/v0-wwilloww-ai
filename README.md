@@ -2,7 +2,7 @@
 
 Storefront for calm, accessible PDF study guides for neurodivergent students (high school through postgraduate).
 
-Live: https://www.wwilloww.ai
+Live: https://willowpdf.com (wwilloww.ai redirects here)
 
 ## What's here
 
@@ -18,7 +18,7 @@ There is no build step. Vercel serves the static files as-is and runs `api/waitl
 
 ## Deploying
 
-The Vercel project `wwilloww-ai` is connected to this repo. Every push to `main` deploys to production at `wwilloww.ai`. Other branches get preview URLs.
+The Vercel project `wwilloww-ai` is connected to this repo. Every push to `main` deploys to production at `willowpdf.com`. Other branches get preview URLs.
 
 Domain: registered at Wix, DNS points to Vercel (`A @ 76.76.21.21`, `CNAME www cname.vercel-dns.com`). Keep the Google Workspace MX/TXT records in Wix unchanged.
 
