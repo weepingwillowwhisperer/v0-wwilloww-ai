@@ -1,61 +1,73 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="daylight">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#f1ece1" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#16201d" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F7F4EF" />
 
-    <title>Willow — calm PDF guides for neurodivergent students</title>
+    <title>Willow Academy — calm PDF guides for neurodivergent students</title>
     <meta
       name="description"
-      content="Willow is a quiet, student-first studio making accessible PDF guides, templates, and study supports for neurodivergent learners from high school through postgraduate research."
+      content="Willow Academy is the learning pillar of Willow: accessible PDF guides, templates, and study supports for neurodivergent learners from high school through postgraduate research."
     />
+    <link rel="canonical" href="https://willowpdf.com/" />
 
     <!-- Open Graph / social -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Willow" />
-    <meta property="og:title" content="Willow — calm PDF guides for neurodivergent students" />
+    <meta property="og:site_name" content="Willow Academy" />
+    <meta property="og:title" content="Willow Academy — calm PDF guides for neurodivergent students" />
     <meta
       property="og:description"
       content="Accessible PDF guides, templates, and study supports for neurodivergent students. Designed with tagged structure, plain-language summaries, and alt text. Seven titles available now."
     />
-    <link rel="canonical" href="https://willowpdf.com/" />
     <meta property="og:url" content="https://willowpdf.com/" />
     <meta property="og:image" content="https://willowpdf.com/og.png" />
-    <meta property="og:image:alt" content="A willow leaf mark beside the wordmark willow on a warm sand background." />
+    <meta property="og:image:alt" content="The Willow Academy logo on a soft willow-green ground, with the line: Learn without forcing your mind into someone else’s method." />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Willow — calm PDF guides for neurodivergent students" />
+    <meta name="twitter:title" content="Willow Academy — calm PDF guides for neurodivergent students" />
     <meta
       name="twitter:description"
       content="Accessible PDFs for neurodivergent learners across high school, undergrad, grad, and postgrad. Seven titles available now."
     />
 
-    <!-- Fonts: Fontshare (Boska editorial display + Supreme readable sans body) -->
-    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-    <link
-      href="https://api.fontshare.com/v2/css?f[]=boska@500,600,700&f[]=supreme@400,500,600&display=swap"
-      rel="stylesheet"
-    />
-
+    <!-- Fonts: Willow brand v2 (Newsreader, Atkinson Hyperlegible Next, IBM Plex Mono), loaded by tokens.css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="tokens.css" />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem("academy-theme"); } catch (e) {}
+        if (t !== "daylight" && t !== "dusk" && t !== "mist") {
+          t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dusk" : "daylight";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
 
-    <!-- Favicon: inline SVG -->
-    <link
-      rel="icon"
-      href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23f1ece1'/><path d='M16 5c-5 4-7 9-7 13 0 5 3 8 7 8s7-3 7-8c0-4-2-9-7-13z' fill='none' stroke='%232f5d52' stroke-width='2' stroke-linejoin='round'/><path d='M16 9v17' stroke='%232f5d52' stroke-width='1.5' stroke-linecap='round'/></svg>"
-      type="image/svg+xml"
-    />
+    <!-- Favicon: the Willow W mark, unchanged from willow-brand/logos -->
+    <link rel="icon" href="logos/willow-w-mark-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="logos/willow-w-mark-light.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
 
-    <!-- JSON-LD: organization + website -->
+    <!-- JSON-LD: Willow Academy, a brand of Weeping Willow Whisperer LLC -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Willow",
+        "name": "Willow Academy",
+        "legalName": "Weeping Willow Whisperer LLC",
         "url": "https://willowpdf.com/",
-        "description": "Accessible PDF study guides for neurodivergent students.",
+        "email": "hello@wwilloww.ai",
+        "description": "Accessible PDF study guides for neurodivergent students. Willow Academy is the learning pillar of Willow.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1664 Beryl Street",
+          "addressLocality": "San Diego",
+          "addressRegion": "CA",
+          "postalCode": "92109",
+          "addressCountry": "US"
+        },
         "sameAs": []
       }
     </script>
@@ -65,28 +77,7 @@
 
     <header class="site-header" role="banner">
       <div class="container header-row">
-        <a class="brand" href="#top" aria-label="Willow home">
-          <svg
-            class="brand-mark"
-            width="36"
-            height="36"
-            viewBox="0 0 40 40"
-            aria-hidden="true"
-            fill="none"
-          >
-            <!-- Willow-leaf mark with central stem -->
-            <path
-              d="M20 4c-6 5-9 11-9 16 0 6 4 10 9 10s9-4 9-10c0-5-3-11-9-16z"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linejoin="round"
-              fill="none"
-            />
-            <path d="M20 9v22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-            <path d="M20 17l-4 2M20 22l4 2M20 13l3-1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity=".7" />
-          </svg>
-          <span class="brand-word">willow</span>
-        </a>
+        <a class="brand" href="#top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.3 262.1" class="lockup" role="img" aria-label="Willow Academy"><g fill="#2b2926"><path d="M110.9 92.4 98.0 124.9Q97.9 125.3 96.95 125.3Q96.0 125.3 95.80000000000001 124.9L70.9 70.8Q69.8 68.1 68.6 66.55Q67.4 65.0 65.95 64.35Q64.5 63.699999999999996 62.4 63.699999999999996Q62.1 63.699999999999996 62.1 63.099999999999994Q62.1 62.5 62.4 62.5Q63.8 62.5 65.1 62.599999999999994Q66.4 62.699999999999996 67.80000000000001 62.75Q69.2 62.8 70.7 62.8Q73.5 62.8 75.65 62.75Q77.8 62.699999999999996 79.44999999999999 62.599999999999994Q81.1 62.5 82.6 62.5Q82.9 62.5 82.9 63.099999999999994Q82.9 63.699999999999996 82.6 63.699999999999996Q78.7 63.699999999999996 77.30000000000001 65.05Q75.9 66.4 77.7 70.4L99.9 118.1L96.30000000000001 122.9L109.4 90.19999999999999ZM156.0 62.5Q156.2 62.5 156.2 63.099999999999994Q156.2 63.699999999999996 156.0 63.699999999999996Q152.7 63.699999999999996 150.2 65.35Q147.7 67.0 145.8 71.6L124.5 124.9Q124.4 125.3 123.45 125.3Q122.5 125.3 122.30000000000001 124.9L97.5 70.8Q95.80000000000001 67.0 93.95 65.35Q92.1 63.699999999999996 89.2 63.699999999999996Q88.9 63.699999999999996 88.9 63.099999999999994Q88.9 62.5 89.2 62.5Q90.5 62.5 91.8 62.599999999999994Q93.1 62.699999999999996 94.45 62.75Q95.80000000000001 62.8 97.30000000000001 62.8Q100.5 62.8 102.4 62.65Q104.30000000000001 62.5 105.80000000000001 62.5Q106.1 62.5 106.1 63.099999999999994Q106.1 63.699999999999996 105.80000000000001 63.699999999999996Q102.7 63.699999999999996 102.45 64.85Q102.2 66.0 104.2 70.4L126.5 118.1L122.9 122.9L143.60000000000002 71.19999999999999Q145.10000000000002 67.4 143.60000000000002 65.55Q142.10000000000002 63.699999999999996 136.8 63.699999999999996Q136.5 63.699999999999996 136.5 63.099999999999994Q136.5 62.5 136.8 62.5Q139.2 62.5 141.4 62.65Q143.60000000000002 62.8 147.10000000000002 62.8Q149.9 62.8 151.7 62.65Q153.5 62.5 156.0 62.5ZM109.9 90.19999999999999 117.5 71.0Q119.1 67.1 118.4 65.39999999999999Q117.7 63.699999999999996 114.4 63.699999999999996Q114.1 63.699999999999996 114.1 63.099999999999994Q114.1 62.5 114.4 62.5Q115.4 62.5 116.25 62.599999999999994Q117.1 62.699999999999996 118.15 62.75Q119.2 62.8 120.9 62.8Q123.7 62.8 125.45 62.65Q127.2 62.5 129.60000000000002 62.5Q129.8 62.5 129.8 63.099999999999994Q129.8 63.699999999999996 129.60000000000002 63.699999999999996Q126.5 63.699999999999996 124.0 65.3Q121.5 66.9 119.7 71.6L111.4 92.4ZM189.50000000000003 116.9Q189.50000000000003 119.8 190.10000000000002 121.3Q190.70000000000002 122.8 192.55 123.3Q194.40000000000003 123.8 198.00000000000003 123.8Q198.3 123.8 198.3 124.4Q198.3 125.0 198.00000000000003 125.0Q195.60000000000002 125.0 192.65000000000003 124.9Q189.70000000000002 124.8 186.10000000000002 124.8Q182.8 124.8 179.75 124.9Q176.70000000000002 125.0 174.3 125.0Q174.00000000000003 125.0 174.00000000000003 124.4Q174.00000000000003 123.8 174.3 123.8Q177.90000000000003 123.8 179.8 123.3Q181.70000000000002 122.8 182.3 121.3Q182.90000000000003 119.8 182.90000000000003 116.9V70.6Q182.90000000000003 67.69999999999999 182.3 66.25Q181.70000000000002 64.8 179.8 64.25Q177.90000000000003 63.699999999999996 174.3 63.699999999999996Q174.00000000000003 63.699999999999996 174.00000000000003 63.099999999999994Q174.00000000000003 62.5 174.3 62.5Q176.70000000000002 62.5 179.75 62.65Q182.8 62.8 186.10000000000002 62.8Q189.70000000000002 62.8 192.70000000000002 62.65Q195.70000000000002 62.5 198.00000000000003 62.5Q198.3 62.5 198.3 63.099999999999994Q198.3 63.699999999999996 198.00000000000003 63.699999999999996Q194.40000000000003 63.699999999999996 192.55 64.3Q190.70000000000002 64.9 190.10000000000002 66.4Q189.50000000000003 67.9 189.50000000000003 70.8ZM235.3 70.69999999999999V116.5Q235.3 119.2 235.9 120.6Q236.5 122.0 238.25 122.45Q240.0 122.9 243.3 122.9H254.20000000000002Q260.0 122.9 263.4 119.25Q266.8 115.6 267.8 109.7Q267.8 109.4 268.35 109.45Q268.90000000000003 109.5 268.90000000000003 109.8Q268.6 112.5 268.3 116.35Q268.0 120.2 268.0 123.5Q268.0 125.0 266.5 125.0H220.3Q220.10000000000002 125.0 220.10000000000002 124.4Q220.10000000000002 123.8 220.3 123.8Q223.9 123.8 225.75 123.3Q227.60000000000002 122.8 228.20000000000002 121.3Q228.8 119.8 228.8 116.9V70.6Q228.8 67.69999999999999 228.20000000000002 66.25Q227.60000000000002 64.8 225.75 64.25Q223.9 63.699999999999996 220.3 63.699999999999996Q220.10000000000002 63.699999999999996 220.10000000000002 63.099999999999994Q220.10000000000002 62.5 220.3 62.5Q222.70000000000002 62.5 225.70000000000002 62.65Q228.70000000000002 62.8 232.0 62.8Q235.5 62.8 238.5 62.65Q241.5 62.5 243.8 62.5Q244.10000000000002 62.5 244.10000000000002 63.099999999999994Q244.10000000000002 63.699999999999996 243.8 63.699999999999996Q240.20000000000002 63.699999999999996 238.35000000000002 64.25Q236.5 64.8 235.9 66.3Q235.3 67.8 235.3 70.69999999999999ZM302.6 70.69999999999999V116.5Q302.6 119.2 303.20000000000005 120.6Q303.8 122.0 305.55 122.45Q307.3 122.9 310.6 122.9H321.5Q327.3 122.9 330.70000000000005 119.25Q334.1 115.6 335.1 109.7Q335.1 109.4 335.65000000000003 109.45Q336.20000000000005 109.5 336.20000000000005 109.8Q335.90000000000003 112.5 335.6 116.35Q335.3 120.2 335.3 123.5Q335.3 125.0 333.8 125.0H287.6Q287.40000000000003 125.0 287.40000000000003 124.4Q287.40000000000003 123.8 287.6 123.8Q291.20000000000005 123.8 293.05000000000007 123.3Q294.90000000000003 122.8 295.5 121.3Q296.1 119.8 296.1 116.9V70.6Q296.1 67.69999999999999 295.5 66.25Q294.90000000000003 64.8 293.05000000000007 64.25Q291.20000000000005 63.699999999999996 287.6 63.699999999999996Q287.40000000000003 63.699999999999996 287.40000000000003 63.099999999999994Q287.40000000000003 62.5 287.6 62.5Q290.0 62.5 293.0 62.65Q296.0 62.8 299.3 62.8Q302.8 62.8 305.8 62.65Q308.8 62.5 311.1 62.5Q311.40000000000003 62.5 311.40000000000003 63.099999999999994Q311.40000000000003 63.699999999999996 311.1 63.699999999999996Q307.5 63.699999999999996 305.65 64.25Q303.8 64.8 303.20000000000005 66.3Q302.6 67.8 302.6 70.69999999999999ZM388.00000000000006 126.2Q380.8 126.2 374.95000000000005 123.65Q369.1 121.1 364.95000000000005 116.6Q360.8 112.1 358.55 106.25Q356.3 100.4 356.3 93.8Q356.3 85.69999999999999 359.45000000000005 79.6Q362.6 73.5 367.80000000000007 69.45Q373.00000000000006 65.4 379.20000000000005 63.400000000000006Q385.40000000000003 61.4 391.50000000000006 61.4Q398.90000000000003 61.4 404.75 64.05Q410.6 66.69999999999999 414.70000000000005 71.19999999999999Q418.80000000000007 75.69999999999999 420.95000000000005 81.39999999999999Q423.1 87.1 423.1 93.1Q423.1 100.1 420.30000000000007 106.1Q417.50000000000006 112.1 412.6500000000001 116.6Q407.80000000000007 121.1 401.45000000000005 123.65Q395.1 126.2 388.00000000000006 126.2ZM391.50000000000006 124.1Q398.30000000000007 124.1 403.70000000000005 120.85Q409.1 117.6 412.30000000000007 111.3Q415.50000000000006 105.0 415.50000000000006 95.9Q415.50000000000006 86.5 412.05000000000007 79.25Q408.6 72.0 402.25 67.85Q395.90000000000003 63.699999999999996 387.3 63.699999999999996Q376.20000000000005 63.699999999999996 370.05000000000007 70.85Q363.90000000000003 78.0 363.90000000000003 90.3Q363.90000000000003 97.4 365.85 103.55000000000001Q367.8 109.7 371.5 114.35Q375.20000000000005 119.0 380.30000000000007 121.55Q385.40000000000003 124.1 391.50000000000006 124.1ZM488.1 92.4 475.20000000000005 124.9Q475.1 125.3 474.15000000000003 125.3Q473.20000000000005 125.3 473.00000000000006 124.9L448.1 70.8Q447.00000000000006 68.1 445.80000000000007 66.55Q444.6 65.0 443.15000000000003 64.35Q441.70000000000005 63.699999999999996 439.6 63.699999999999996Q439.30000000000007 63.699999999999996 439.30000000000007 63.099999999999994Q439.30000000000007 62.5 439.6 62.5Q441.00000000000006 62.5 442.30000000000007 62.599999999999994Q443.6 62.699999999999996 445.0 62.75Q446.40000000000003 62.8 447.90000000000003 62.8Q450.70000000000005 62.8 452.85 62.75Q455.00000000000006 62.699999999999996 456.6500000000001 62.599999999999994Q458.30000000000007 62.5 459.80000000000007 62.5Q460.1 62.5 460.1 63.099999999999994Q460.1 63.699999999999996 459.80000000000007 63.699999999999996Q455.90000000000003 63.699999999999996 454.5 65.05Q453.1 66.4 454.90000000000003 70.4L477.1 118.1L473.50000000000006 122.9L486.6 90.19999999999999ZM533.2 62.5Q533.4000000000001 62.5 533.4000000000001 63.099999999999994Q533.4000000000001 63.699999999999996 533.2 63.699999999999996Q529.9000000000001 63.699999999999996 527.4000000000001 65.35Q524.9000000000001 67.0 523.0 71.6L501.70000000000005 124.9Q501.6 125.3 500.65000000000003 125.3Q499.70000000000005 125.3 499.50000000000006 124.9L474.70000000000005 70.8Q473.00000000000006 67.0 471.1500000000001 65.35Q469.30000000000007 63.699999999999996 466.40000000000003 63.699999999999996Q466.1 63.699999999999996 466.1 63.099999999999994Q466.1 62.5 466.40000000000003 62.5Q467.70000000000005 62.5 469.00000000000006 62.599999999999994Q470.30000000000007 62.699999999999996 471.6500000000001 62.75Q473.00000000000006 62.8 474.50000000000006 62.8Q477.70000000000005 62.8 479.6 62.65Q481.50000000000006 62.5 483.00000000000006 62.5Q483.30000000000007 62.5 483.30000000000007 63.099999999999994Q483.30000000000007 63.699999999999996 483.00000000000006 63.699999999999996Q479.90000000000003 63.699999999999996 479.65000000000003 64.85Q479.40000000000003 66.0 481.40000000000003 70.4L503.70000000000005 118.1L500.1 122.9L520.8000000000001 71.19999999999999Q522.3000000000001 67.4 520.8000000000001 65.55Q519.3000000000001 63.699999999999996 514.0 63.699999999999996Q513.7 63.699999999999996 513.7 63.099999999999994Q513.7 62.5 514.0 62.5Q516.4000000000001 62.5 518.6000000000001 62.65Q520.8000000000001 62.8 524.3000000000001 62.8Q527.1 62.8 528.9000000000001 62.65Q530.7 62.5 533.2 62.5ZM487.1 90.19999999999999 494.70000000000005 71.0Q496.30000000000007 67.1 495.6 65.39999999999999Q494.90000000000003 63.699999999999996 491.6 63.699999999999996Q491.30000000000007 63.699999999999996 491.30000000000007 63.099999999999994Q491.30000000000007 62.5 491.6 62.5Q492.6 62.5 493.45000000000005 62.599999999999994Q494.30000000000007 62.699999999999996 495.35 62.75Q496.40000000000003 62.8 498.1 62.8Q500.90000000000003 62.8 502.65000000000003 62.65Q504.40000000000003 62.5 506.80000000000007 62.5Q507.00000000000006 62.5 507.00000000000006 63.099999999999994Q507.00000000000006 63.699999999999996 506.80000000000007 63.699999999999996Q503.70000000000005 63.699999999999996 501.20000000000005 65.3Q498.70000000000005 66.9 496.90000000000003 71.6L488.6 92.4Z"/><path d="M62.50 151.25h470.30v1.20h-470.30z"/><path d="M76.36 199.64 74.77 194.05999999999997H68.11L66.52 199.64H63.1L69.22 178.7H73.81L79.93 199.64ZM71.56 182.08999999999997H71.32L68.74 191.26999999999998H74.14ZM99.69999999999999 200.0Q95.71 200.0 93.77499999999999 197.18Q91.83999999999999 194.35999999999999 91.83999999999999 189.17Q91.83999999999999 183.98 93.77499999999999 181.15999999999997Q95.71 178.33999999999997 99.69999999999999 178.33999999999997Q101.22999999999999 178.33999999999997 102.35499999999999 178.74499999999998Q103.47999999999999 179.14999999999998 104.28999999999999 179.855Q105.1 180.56 105.655 181.505Q106.21 182.45 106.57 183.52999999999997L103.53999999999999 184.54999999999998Q103.3 183.82999999999998 103.0 183.2Q102.69999999999999 182.57 102.25 182.12Q101.8 181.67 101.185 181.39999999999998Q100.57 181.13 99.66999999999999 181.13Q97.44999999999999 181.13 96.42999999999999 182.825Q95.41 184.51999999999998 95.41 187.39999999999998V190.94Q95.41 193.82 96.42999999999999 195.515Q97.44999999999999 197.20999999999998 99.66999999999999 197.20999999999998Q100.57 197.20999999999998 101.185 196.94Q101.8 196.67 102.25 196.21999999999997Q102.69999999999999 195.76999999999998 103.0 195.14Q103.3 194.51 103.53999999999999 193.79L106.57 194.80999999999997Q106.21 195.89 105.655 196.83499999999998Q105.1 197.77999999999997 104.28999999999999 198.48499999999999Q103.47999999999999 199.19 102.35499999999999 199.595Q101.22999999999999 200.0 99.69999999999999 200.0ZM131.56 199.64 129.97 194.05999999999997H123.30999999999999L121.71999999999998 199.64H118.29999999999998L124.41999999999999 178.7H129.01L135.13 199.64ZM126.75999999999999 182.08999999999997H126.51999999999998L123.93999999999998 191.26999999999998H129.33999999999997ZM147.76000000000002 178.7H154.0Q158.02 178.7 159.955 181.37Q161.89000000000001 184.04 161.89000000000001 189.17Q161.89000000000001 194.29999999999998 159.955 196.96999999999997Q158.02 199.64 154.0 199.64H147.76000000000002ZM153.79000000000002 196.88Q156.10000000000002 196.88 157.22500000000002 195.33499999999998Q158.35000000000002 193.79 158.35000000000002 190.91V187.42999999999998Q158.35000000000002 184.54999999999998 157.22500000000002 183.005Q156.10000000000002 181.45999999999998 153.79000000000002 181.45999999999998H151.09V196.88ZM175.48 199.64V178.7H188.58999999999997V181.51999999999998H178.83999999999997V187.60999999999999H188.23V190.42999999999998H178.83999999999997V196.82H188.58999999999997V199.64ZM213.85 189.61999999999998 213.94 183.32H213.7L209.5 194.08999999999997L205.3 183.32H205.06L205.15 189.61999999999998V199.64H202.18V178.7H206.29L209.5 187.01H209.71L212.95 178.7H216.82V199.64H213.85ZM235.42 199.64V191.75L228.46 178.7H232.20999999999998L234.88 183.92L237.04 188.39H237.22L239.41 183.92L242.07999999999998 178.7H245.74L238.78 191.75V199.64Z"/></g></svg></a>
 
         <nav class="primary-nav" aria-label="Primary">
           <a href="#library">Library</a>
@@ -97,23 +88,12 @@
         </nav>
 
         <div class="header-actions">
-          <button
-            type="button"
-            class="theme-toggle"
-            id="themeToggle"
-            aria-pressed="false"
-            aria-label="Switch to dark mode"
-            title="Toggle dark mode"
-          >
-            <svg class="icon icon-sun" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="4" />
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-            </svg>
-            <svg class="icon icon-moon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
-            </svg>
-          </button>
-          <a class="btn btn-primary btn-sm" href="#library">Browse the PDFs</a>
+          <div class="themes" role="group" aria-label="Reading theme">
+            <button type="button" data-theme-choice="daylight" aria-pressed="true">Daylight</button>
+            <button type="button" data-theme-choice="dusk" aria-pressed="false">Dusk</button>
+            <button type="button" data-theme-choice="mist" aria-pressed="false">Mist</button>
+          </div>
+          <a class="btn btn-sm" href="#library">Browse the PDFs</a>
         </div>
       </div>
     </header>
@@ -123,24 +103,21 @@
       <section class="hero" id="top" aria-labelledby="hero-heading">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">
-              <span class="dot" aria-hidden="true"></span>
-              Seven accessible PDFs, available now
-            </p>
+            <p class="eyebrow">Seven accessible PDFs, available now</p>
             <h1 id="hero-heading" class="display">
               Study tools that work with your nervous system,
               <span class="text-accent">not against your brain.</span>
             </h1>
             <p class="lede">
-              Willow makes low-friction PDF guides, planners, and scripts
+              Willow Academy makes low-friction PDF guides, planners, and scripts
               for neurodivergent students &mdash; from high school through postgraduate
               research. Every resource is designed for screen readers, printing,
               skimming, and the days when starting is the hardest part.
             </p>
             <div class="cta-row">
               <a class="btn btn-primary" href="#library">Browse the PDF library</a>
-              <a class="btn btn-ghost" href="#waitlist">Get new-title updates
-                <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              <a class="btn" href="#waitlist">Get new-title updates
+                <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
             </div>
             <ul class="audience-chips" aria-label="Who this is for">
@@ -153,7 +130,8 @@
 
           <aside class="hero-card" aria-label="Snapshot of the starting title">
             <div class="hero-card-inner">
-              <div class="card-tag">Start here · Available now</div>
+              <p class="pillar-chip">II · Academy</p>
+              <p class="card-tag">Start here · Available now</p>
               <h2 class="hero-card-title">The First Five Minutes Kit</h2>
               <p class="hero-card-body">
                 A 32-page PDF for turning the foggy beginning of a task into
@@ -165,10 +143,12 @@
                 <li><strong>Reading level</strong><span>Plain language, grade 7</span></li>
                 <li><strong>Print &amp; screen</strong><span>High-contrast variants</span></li>
               </ul>
-              <p class="coming-soon is-live">
-                <span class="cs-dot" aria-hidden="true"></span> Available now
-              </p>
-              <a class="btn btn-primary btn-sm hero-card-buy" href="https://payhip.com/b/fKnFu" target="_blank" rel="noopener" aria-label="Buy The First Five Minutes Kit on Payhip (opens in a new tab)">Buy PDF</a>
+              <div class="hero-card-foot">
+                <p class="coming-soon is-live">
+                  <span class="cs-dot" aria-hidden="true"></span> Available now
+                </p>
+                <a class="btn btn-sm hero-card-buy" href="https://payhip.com/b/fKnFu" target="_blank" rel="noopener" aria-label="Buy The First Five Minutes Kit on Payhip (opens in a new tab)">Buy PDF</a>
+              </div>
             </div>
           </aside>
         </div>
@@ -186,7 +166,7 @@
           </div>
           <div class="col-wide prose">
             <p>
-              Willow began with a simple question: what would academic support
+              Willow Academy began with a simple question: what would academic support
               look like if it assumed an ADHD, autistic, dyslexic, dyspraxic,
               chronically tired, or twice-exceptional brain from the first draft?
             </p>
@@ -197,8 +177,9 @@
               that leaves room for sensory load and recovery.
             </p>
             <p>
-              We are a tiny independent studio. Quiet by design, plain on purpose,
-              and committed to accessible PDFs as the product itself.
+              Willow Academy is the learning pillar of Willow, a tiny
+              independent studio. Quiet by design, plain on purpose, and
+              committed to accessible PDFs as the product itself.
             </p>
           </div>
         </div>
@@ -230,7 +211,7 @@
                 <h3>The First Five Minutes Kit</h3>
                 <p>A task-starting kit for the moment before momentum exists: a weekly anchor page, triage card, transition scripts, and three printable focus mats.</p>
                 <p class="status status-live">Available now</p>
-                <a class="btn btn-primary btn-sm" href="https://payhip.com/b/fKnFu" target="_blank" rel="noopener" aria-label="Buy The First Five Minutes Kit on Payhip (opens in a new tab)">Buy PDF</a>
+                <a class="btn btn-sm" href="https://payhip.com/b/fKnFu" target="_blank" rel="noopener" aria-label="Buy The First Five Minutes Kit on Payhip (opens in a new tab)">Buy PDF</a>
               </div>
             </li>
 
@@ -244,7 +225,7 @@
                 <h3>The Low-Sensory Study Planner</h3>
                 <p>A weekly planner that accounts for energy, sensory load, transition cost, and recovery time &mdash; not just deadlines and empty boxes.</p>
                 <p class="status status-live">Available now</p>
-                <a class="btn btn-primary btn-sm" href="https://payhip.com/b/cTZQl" target="_blank" rel="noopener" aria-label="Buy The Low-Sensory Study Planner on Payhip (opens in a new tab)">Buy PDF</a>
+                <a class="btn btn-sm" href="https://payhip.com/b/cTZQl" target="_blank" rel="noopener" aria-label="Buy The Low-Sensory Study Planner on Payhip (opens in a new tab)">Buy PDF</a>
               </div>
             </li>
 
@@ -258,7 +239,7 @@
                 <h3>The Thesis Momentum Map</h3>
                 <p>A non-linear thesis tracker for stall-and-surge writing patterns, with chapter weather reports, next-action lanes, and a supervisor-meeting template.</p>
                 <p class="status status-live">Available now</p>
-                <a class="btn btn-primary btn-sm" href="https://payhip.com/b/3sz1Y" target="_blank" rel="noopener" aria-label="Buy The Thesis Momentum Map on Payhip (opens in a new tab)">Buy PDF</a>
+                <a class="btn btn-sm" href="https://payhip.com/b/3sz1Y" target="_blank" rel="noopener" aria-label="Buy The Thesis Momentum Map on Payhip (opens in a new tab)">Buy PDF</a>
               </div>
             </li>
 
@@ -272,7 +253,7 @@
                 <h3>The Ask-Safely Script Pack</h3>
                 <p>Ready-to-edit templates for emailing instructors, advisors, and disability services when your brain will not let you start from a blank page.</p>
                 <p class="status status-live">Available now</p>
-                <a class="btn btn-primary btn-sm" href="https://payhip.com/b/khsMf" target="_blank" rel="noopener" aria-label="Buy The Ask-Safely Script Pack on Payhip (opens in a new tab)">Buy PDF</a>
+                <a class="btn btn-sm" href="https://payhip.com/b/khsMf" target="_blank" rel="noopener" aria-label="Buy The Ask-Safely Script Pack on Payhip (opens in a new tab)">Buy PDF</a>
               </div>
             </li>
 
@@ -286,7 +267,7 @@
                 <h3>The Exam Week Soft Landing</h3>
                 <p>A nervous-system-first plan for the seven days around an exam: sleep, fuel, movement, sensory buffers, and recovery checklists.</p>
                 <p class="status status-live">Available now</p>
-                <a class="btn btn-primary btn-sm" href="https://payhip.com/b/CnXhF" target="_blank" rel="noopener" aria-label="Buy The Exam Week Soft Landing on Payhip (opens in a new tab)">Buy PDF</a>
+                <a class="btn btn-sm" href="https://payhip.com/b/CnXhF" target="_blank" rel="noopener" aria-label="Buy The Exam Week Soft Landing on Payhip (opens in a new tab)">Buy PDF</a>
               </div>
             </li>
 
@@ -300,7 +281,7 @@
                 <h3>The Dense Reading Decoder</h3>
                 <p>A six-step method for academic reading when the same paragraph keeps vanishing. Includes a one-page annotation key and a restart protocol.</p>
                 <p class="status status-live">Available now</p>
-                <a class="btn btn-primary btn-sm" href="https://payhip.com/b/RS8qi" target="_blank" rel="noopener" aria-label="Buy The Dense Reading Decoder on Payhip (opens in a new tab)">Buy PDF</a>
+                <a class="btn btn-sm" href="https://payhip.com/b/RS8qi" target="_blank" rel="noopener" aria-label="Buy The Dense Reading Decoder on Payhip (opens in a new tab)">Buy PDF</a>
               </div>
             </li>
 
@@ -314,10 +295,16 @@
                 <h3>The After-Burnout Re-Entry Checklist</h3>
                 <p>A gentle, staged checklist for the term after the term that broke you, with permission slips and a worksheet for doing less on purpose.</p>
                 <p class="status status-live">Available now</p>
-                <a class="btn btn-primary btn-sm" href="https://payhip.com/b/9e3up" target="_blank" rel="noopener" aria-label="Buy The After-Burnout Re-Entry Checklist on Payhip (opens in a new tab)">Buy PDF</a>
+                <a class="btn btn-sm" href="https://payhip.com/b/9e3up" target="_blank" rel="noopener" aria-label="Buy The After-Burnout Re-Entry Checklist on Payhip (opens in a new tab)">Buy PDF</a>
               </div>
             </li>
           </ul>
+          <p class="micro-note">
+            Willow Academy guides are general study supports, not medical,
+            mental health, legal or academic advice. Checkout and download
+            are handled by Payhip. Read the <a href="terms.html">terms</a> and
+            <a href="notices.html">notices</a>.
+          </p>
         </div>
       </section>
 
@@ -362,7 +349,7 @@
               </li>
               <li>
                 <span class="bullet" aria-hidden="true"></span>
-                <span>Task triage card: <em>now / soon / later / not for me</em>.</span>
+                <span>Task triage card: <strong>now / soon / later / not for me</strong>.</span>
               </li>
               <li>
                 <span class="bullet" aria-hidden="true"></span>
@@ -385,7 +372,7 @@
       <!-- OUTCOMES -->
       <section class="section outcomes" id="outcomes" aria-labelledby="outcomes-heading">
         <div class="container">
-          <header class="section-head center">
+          <header class="section-head">
             <p class="kicker">Designed for</p>
             <h2 id="outcomes-heading" class="display-sm">
               The hard parts &mdash; not the inspirational poster version.
@@ -517,7 +504,7 @@
 
             <button type="submit" class="btn btn-primary btn-block">Get updates</button>
             <p id="form-help" class="form-help">
-              We will email you only about Willow PDFs and beta invitations. Your signup will be saved in our private list.
+              We will email you only about Willow Academy PDFs and beta invitations. Your signup will be saved in our private list. Read our <a href="privacy.html">privacy note</a>.
             </p>
             <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
           </form>
@@ -539,7 +526,7 @@
               <details class="faq-item" role="listitem">
                 <summary>
                   <span>Are the PDFs available now?</span>
-                  <span class="chev" aria-hidden="true">＋</span>
+                  <span class="chev" aria-hidden="true"></span>
                 </summary>
                 <div class="faq-body">
                   <p>Yes. All seven titles are available now through Payhip. Each one was checked for accessibility before release, and we keep revising them based on reader feedback.</p>
@@ -549,7 +536,7 @@
               <details class="faq-item" role="listitem">
                 <summary>
                   <span>Are the PDFs really accessible, or is "accessible" just marketing?</span>
-                  <span class="chev" aria-hidden="true">＋</span>
+                  <span class="chev" aria-hidden="true"></span>
                 </summary>
                 <div class="faq-body">
                   <p>Every PDF is tagged for screen readers, with a logical reading order, bookmarks, labeled form fields, and a plain-language summary at the top of each section. Each was checked for structure, contrast and reading level before release, and each opens with its own accessibility statement. If something fails for you, tell us and we will fix it.</p>
@@ -559,7 +546,7 @@
               <details class="faq-item" role="listitem">
                 <summary>
                   <span>Which versions do I get?</span>
-                  <span class="chev" aria-hidden="true">＋</span>
+                  <span class="chev" aria-hidden="true"></span>
                 </summary>
                 <div class="faq-body">
                   <p>Five PDFs with every title. Standard, in A4 and US Letter. Print high-contrast, in A4 and US Letter: dark text on white, with very little ink. Screen low-stimulation, in A4: a warm, quiet page with fewer boxes. Choose the one that suits the day.</p>
@@ -568,8 +555,8 @@
 
               <details class="faq-item" role="listitem">
                 <summary>
-                  <span>Who is Willow for, exactly?</span>
-                  <span class="chev" aria-hidden="true">＋</span>
+                  <span>Who is Willow Academy for, exactly?</span>
+                  <span class="chev" aria-hidden="true"></span>
                 </summary>
                 <div class="faq-body">
                   <p>Students with ADHD, autism, dyslexia, dyspraxia, dyscalculia, Tourette's, and other neurodivergent profiles &mdash; diagnosed or self-identifying &mdash; from high school through postdoctoral work. Allistic students, instructors, and disability services staff are very welcome too; the materials were designed to be useful, not gatekept.</p>
@@ -579,7 +566,7 @@
               <details class="faq-item" role="listitem">
                 <summary>
                   <span>How much do the PDFs cost?</span>
-                  <span class="chev" aria-hidden="true">＋</span>
+                  <span class="chev" aria-hidden="true"></span>
                 </summary>
                 <div class="faq-body">
                   <p>Each title has one fixed price, from $6 to $12, shown on its Payhip page before you pay. Payhip adds any tax that applies where you live. For a class, a department or a disability services team, email <a href="mailto:hello@wwilloww.ai?subject=Institutions%20%26%20licensing">hello@wwilloww.ai</a> and we will arrange a licence with you.</p>
@@ -589,10 +576,20 @@
               <details class="faq-item" role="listitem">
                 <summary>
                   <span>Is AI involved?</span>
-                  <span class="chev" aria-hidden="true">＋</span>
+                  <span class="chev" aria-hidden="true"></span>
                 </summary>
                 <div class="faq-body">
                   <p>There is no chatbot here. Willow's guides are directed, edited and approved by a person. AI tools help with drafting and production, and nothing is released until a person has read every page. We do not sell your data, and nothing you send us is used to train models.</p>
+                </div>
+              </details>
+
+              <details class="faq-item" role="listitem">
+                <summary>
+                  <span>Is Willow Academy a school?</span>
+                  <span class="chev" aria-hidden="true"></span>
+                </summary>
+                <div class="faq-body">
+                  <p>No. Willow Academy is a library of self-guided study resources. It is not an accredited school, and it does not offer enrolment, tutoring, grades, credits or certificates. It is the learning pillar of Willow, a studio owned and operated by Weeping Willow Whisperer LLC. The <a href="notices.html">notices page</a> has the details.</p>
                 </div>
               </details>
             </div>
@@ -604,7 +601,7 @@
       <section class="section a11y" id="accessibility" aria-labelledby="a11y-heading">
         <div class="container a11y-card">
           <div class="a11y-mark" aria-hidden="true">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="4.5" r="1.5" fill="currentColor"/>
               <path d="M5 8h14"/>
               <path d="M12 8v6"/>
@@ -615,7 +612,7 @@
             <p class="kicker">Accessibility statement</p>
             <h2 id="a11y-heading" class="display-sm">Accessibility is the product, not a footer link.</h2>
             <p>
-              We design Willow PDFs and this site to meet
+              We design Willow Academy PDFs and this site to meet
               <strong>WCAG 2.2 AA</strong> as a floor, not a ceiling.
               In practice, that means:
             </p>
@@ -625,7 +622,7 @@
               <li>Alt text for all meaningful images and diagrams; decorative imagery is marked as such.</li>
               <li>4.5:1 minimum contrast for body text, visible keyboard focus, and no information conveyed by colour alone.</li>
               <li>A reduced-motion mode that honours <code>prefers-reduced-motion</code>. Nothing autoplays, nothing flashes.</li>
-              <li>A dark mode that respects your system setting.</li>
+              <li>Three reading themes: Daylight, Dusk and Mist. Dusk follows your system’s dark setting until you choose a theme yourself.</li>
             </ul>
             <p>
               If a PDF, page, or form ever blocks you, email
@@ -671,18 +668,16 @@
     <footer class="site-footer" role="contentinfo">
       <div class="container footer-grid">
         <div class="footer-brand">
-          <a class="brand" href="#top" aria-label="Willow home">
-            <svg class="brand-mark" width="32" height="32" viewBox="0 0 40 40" aria-hidden="true" fill="none">
-              <path d="M20 4c-6 5-9 11-9 16 0 6 4 10 9 10s9-4 9-10c0-5-3-11-9-16z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
-              <path d="M20 9v22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            </svg>
-            <span class="brand-word">willow</span>
-          </a>
-          <p class="footer-tag">Calm PDF guides for neurodivergent students.</p>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1935.0 187.5" class="company-line" role="img" aria-label="Weeping Willow Whisperer LLC"><g fill="#2b2926"><path d="M110.9 92.4 98.0 124.9Q97.9 125.3 96.95 125.3Q96.0 125.3 95.80000000000001 124.9L70.9 70.8Q69.8 68.1 68.6 66.55Q67.4 65.0 65.95 64.35Q64.5 63.699999999999996 62.4 63.699999999999996Q62.1 63.699999999999996 62.1 63.099999999999994Q62.1 62.5 62.4 62.5Q63.8 62.5 65.1 62.599999999999994Q66.4 62.699999999999996 67.80000000000001 62.75Q69.2 62.8 70.7 62.8Q73.5 62.8 75.65 62.75Q77.8 62.699999999999996 79.44999999999999 62.599999999999994Q81.1 62.5 82.6 62.5Q82.9 62.5 82.9 63.099999999999994Q82.9 63.699999999999996 82.6 63.699999999999996Q78.7 63.699999999999996 77.30000000000001 65.05Q75.9 66.4 77.7 70.4L99.9 118.1L96.30000000000001 122.9L109.4 90.19999999999999ZM156.0 62.5Q156.2 62.5 156.2 63.099999999999994Q156.2 63.699999999999996 156.0 63.699999999999996Q152.7 63.699999999999996 150.2 65.35Q147.7 67.0 145.8 71.6L124.5 124.9Q124.4 125.3 123.45 125.3Q122.5 125.3 122.30000000000001 124.9L97.5 70.8Q95.80000000000001 67.0 93.95 65.35Q92.1 63.699999999999996 89.2 63.699999999999996Q88.9 63.699999999999996 88.9 63.099999999999994Q88.9 62.5 89.2 62.5Q90.5 62.5 91.8 62.599999999999994Q93.1 62.699999999999996 94.45 62.75Q95.80000000000001 62.8 97.30000000000001 62.8Q100.5 62.8 102.4 62.65Q104.30000000000001 62.5 105.80000000000001 62.5Q106.1 62.5 106.1 63.099999999999994Q106.1 63.699999999999996 105.80000000000001 63.699999999999996Q102.7 63.699999999999996 102.45 64.85Q102.2 66.0 104.2 70.4L126.5 118.1L122.9 122.9L143.60000000000002 71.19999999999999Q145.10000000000002 67.4 143.60000000000002 65.55Q142.10000000000002 63.699999999999996 136.8 63.699999999999996Q136.5 63.699999999999996 136.5 63.099999999999994Q136.5 62.5 136.8 62.5Q139.2 62.5 141.4 62.65Q143.60000000000002 62.8 147.10000000000002 62.8Q149.9 62.8 151.7 62.65Q153.5 62.5 156.0 62.5ZM109.9 90.19999999999999 117.5 71.0Q119.1 67.1 118.4 65.39999999999999Q117.7 63.699999999999996 114.4 63.699999999999996Q114.1 63.699999999999996 114.1 63.099999999999994Q114.1 62.5 114.4 62.5Q115.4 62.5 116.25 62.599999999999994Q117.1 62.699999999999996 118.15 62.75Q119.2 62.8 120.9 62.8Q123.7 62.8 125.45 62.65Q127.2 62.5 129.60000000000002 62.5Q129.8 62.5 129.8 63.099999999999994Q129.8 63.699999999999996 129.60000000000002 63.699999999999996Q126.5 63.699999999999996 124.0 65.3Q121.5 66.9 119.7 71.6L111.4 92.4ZM213.8 125.0H171.90000000000003Q171.70000000000002 125.0 171.70000000000002 124.4Q171.70000000000002 123.8 171.90000000000003 123.8Q175.60000000000002 123.8 177.40000000000003 123.3Q179.20000000000002 122.8 179.85000000000002 121.3Q180.50000000000003 119.8 180.50000000000003 116.9V70.6Q180.50000000000003 67.69999999999999 179.85000000000002 66.25Q179.20000000000002 64.8 177.40000000000003 64.25Q175.60000000000002 63.699999999999996 171.90000000000003 63.699999999999996Q171.70000000000002 63.699999999999996 171.70000000000002 63.099999999999994Q171.70000000000002 62.5 171.90000000000003 62.5H212.10000000000002Q213.00000000000003 62.5 213.00000000000003 63.4L213.20000000000002 75.69999999999999Q213.20000000000002 76.0 212.65000000000003 76.05Q212.10000000000002 76.1 212.10000000000002 75.8Q211.8 70.4 208.85000000000002 67.5Q205.90000000000003 64.6 201.20000000000002 64.6H195.10000000000002Q191.70000000000002 64.6 189.95000000000002 65.1Q188.20000000000002 65.6 187.55 67.0Q186.90000000000003 68.4 186.90000000000003 71.1V116.5Q186.90000000000003 119.1 187.55 120.5Q188.20000000000002 121.9 189.85000000000002 122.4Q191.50000000000003 122.9 194.8 122.9H202.8Q207.60000000000002 122.9 210.85000000000002 119.45Q214.10000000000002 116.0 215.10000000000002 110.1Q215.10000000000002 109.8 215.70000000000002 109.9Q216.3 110.0 216.3 110.3Q215.90000000000003 112.9 215.65000000000003 116.6Q215.40000000000003 120.3 215.40000000000003 123.5Q215.40000000000003 125.0 213.8 125.0ZM208.20000000000002 101.7Q208.20000000000002 97.3 206.05 95.4Q203.90000000000003 93.5 198.90000000000003 93.5H183.90000000000003V91.4H199.20000000000002Q204.00000000000003 91.4 206.05 89.75Q208.10000000000002 88.1 208.10000000000002 84.4Q208.10000000000002 84.19999999999999 208.70000000000002 84.19999999999999Q209.3 84.19999999999999 209.3 84.4Q209.3 87.4 209.25 89.05Q209.20000000000002 90.69999999999999 209.20000000000002 92.5Q209.20000000000002 94.8 209.3 97.0Q209.40000000000003 99.2 209.40000000000003 101.7Q209.40000000000003 101.9 208.8 101.9Q208.20000000000002 101.9 208.20000000000002 101.7ZM279.5 125.0H237.60000000000002Q237.4 125.0 237.4 124.4Q237.4 123.8 237.60000000000002 123.8Q241.3 123.8 243.10000000000002 123.3Q244.9 122.8 245.55 121.3Q246.20000000000002 119.8 246.20000000000002 116.9V70.6Q246.20000000000002 67.69999999999999 245.55 66.25Q244.9 64.8 243.10000000000002 64.25Q241.3 63.699999999999996 237.60000000000002 63.699999999999996Q237.4 63.699999999999996 237.4 63.099999999999994Q237.4 62.5 237.60000000000002 62.5H277.8Q278.70000000000005 62.5 278.70000000000005 63.4L278.90000000000003 75.69999999999999Q278.90000000000003 76.0 278.35 76.05Q277.8 76.1 277.8 75.8Q277.5 70.4 274.55 67.5Q271.6 64.6 266.90000000000003 64.6H260.8Q257.40000000000003 64.6 255.65000000000003 65.1Q253.9 65.6 253.25 67.0Q252.60000000000002 68.4 252.60000000000002 71.1V116.5Q252.60000000000002 119.1 253.25 120.5Q253.9 121.9 255.55 122.4Q257.2 122.9 260.5 122.9H268.5Q273.3 122.9 276.55 119.45Q279.8 116.0 280.8 110.1Q280.8 109.8 281.4 109.9Q282.0 110.0 282.0 110.3Q281.6 112.9 281.35 116.6Q281.1 120.3 281.1 123.5Q281.1 125.0 279.5 125.0ZM273.90000000000003 101.7Q273.90000000000003 97.3 271.75 95.4Q269.6 93.5 264.6 93.5H249.60000000000002V91.4H264.90000000000003Q269.7 91.4 271.75 89.75Q273.8 88.1 273.8 84.4Q273.8 84.19999999999999 274.4 84.19999999999999Q275.0 84.19999999999999 275.0 84.4Q275.0 87.4 274.95000000000005 89.05Q274.90000000000003 90.69999999999999 274.90000000000003 92.5Q274.90000000000003 94.8 275.0 97.0Q275.1 99.2 275.1 101.7Q275.1 101.9 274.5 101.9Q273.90000000000003 101.9 273.90000000000003 101.7ZM318.2 116.5Q318.2 119.5 319.0 121.05Q319.8 122.6 322.4 123.19999999999999Q325.0 123.8 330.1 123.8Q330.4 123.8 330.4 124.4Q330.4 125.0 330.1 125.0Q326.9 125.0 323.15 124.9Q319.4 124.8 315.0 124.8Q311.7 124.8 308.65 124.9Q305.6 125.0 303.2 125.0Q303.0 125.0 303.0 124.4Q303.0 123.8 303.2 123.8Q306.9 123.8 308.7 123.3Q310.5 122.8 311.1 121.3Q311.7 119.8 311.7 116.9V70.6Q311.7 67.69999999999999 311.1 66.25Q310.5 64.8 308.7 64.25Q306.9 63.699999999999996 303.2 63.699999999999996Q303.0 63.699999999999996 303.0 63.099999999999994Q303.0 62.5 303.2 62.5Q305.6 62.5 308.6 62.65Q311.6 62.8 314.9 62.8Q317.5 62.8 321.25 62.5Q325.0 62.199999999999996 328.8 62.199999999999996Q334.5 62.199999999999996 339.05 63.89999999999999Q343.6 65.6 346.3 69.19999999999999Q349.0 72.8 349.1 78.6Q349.1 83.9 347.15 87.7Q345.2 91.5 341.95 93.95Q338.7 96.4 334.79999999999995 97.6Q330.9 98.8 327.0 98.8Q325.8 98.8 324.55 98.69999999999999Q323.3 98.6 322.2 98.3Q321.8 98.2 321.95000000000005 97.55000000000001Q322.1 96.9 322.4 97.0Q323.3 97.2 324.25 97.30000000000001Q325.2 97.4 326.0 97.4Q330.1 97.4 333.70000000000005 95.6Q337.3 93.8 339.5 90.05Q341.7 86.3 341.7 80.69999999999999Q341.7 75.19999999999999 339.7 71.44999999999999Q337.7 67.69999999999999 334.2 65.69999999999999Q330.7 63.699999999999996 326.4 63.699999999999996Q323.1 63.699999999999996 321.35 64.05Q319.6 64.4 318.9 65.9Q318.2 67.4 318.2 70.8ZM385.2 116.9Q385.2 119.8 385.8 121.3Q386.40000000000003 122.8 388.25 123.3Q390.1 123.8 393.7 123.8Q394.0 123.8 394.0 124.4Q394.0 125.0 393.7 125.0Q391.3 125.0 388.35 124.9Q385.40000000000003 124.8 381.8 124.8Q378.5 124.8 375.45000000000005 124.9Q372.40000000000003 125.0 370.0 125.0Q369.7 125.0 369.7 124.4Q369.7 123.8 370.0 123.8Q373.6 123.8 375.5 123.3Q377.40000000000003 122.8 378.0 121.3Q378.6 119.8 378.6 116.9V70.6Q378.6 67.69999999999999 378.0 66.25Q377.40000000000003 64.8 375.5 64.25Q373.6 63.699999999999996 370.0 63.699999999999996Q369.7 63.699999999999996 369.7 63.099999999999994Q369.7 62.5 370.0 62.5Q372.40000000000003 62.5 375.45000000000005 62.65Q378.5 62.8 381.8 62.8Q385.40000000000003 62.8 388.40000000000003 62.65Q391.40000000000003 62.5 393.7 62.5Q394.0 62.5 394.0 63.099999999999994Q394.0 63.699999999999996 393.7 63.699999999999996Q390.1 63.699999999999996 388.25 64.3Q386.40000000000003 64.9 385.8 66.4Q385.2 67.9 385.2 70.8ZM422.5 114.1V64.8L424.8 65.0V114.1Q424.8 119.3 426.6 121.55Q428.4 123.8 432.6 123.8Q432.9 123.8 432.9 124.4Q432.9 125.0 432.6 125.0Q430.6 125.0 428.5 124.9Q426.4 124.8 423.8 124.8Q421.3 124.8 419.0 124.9Q416.7 125.0 414.6 125.0Q414.4 125.0 414.4 124.4Q414.4 123.8 414.6 123.8Q419.0 123.8 420.75 121.55Q422.5 119.3 422.5 114.1ZM472.9 126.2Q472.9 126.4 472.4 126.45Q471.9 126.5 471.7 126.4L425.7 70.69999999999999Q422.3 66.6 419.65 65.14999999999999Q417.0 63.699999999999996 414.6 63.699999999999996Q414.3 63.699999999999996 414.3 63.099999999999994Q414.3 62.5 414.6 62.5Q416.4 62.5 418.25 62.599999999999994Q420.1 62.699999999999996 421.6 62.699999999999996Q423.4 62.699999999999996 425.0 62.599999999999994Q426.6 62.5 427.4 62.5Q428.7 62.5 429.2 63.65Q429.7 64.8 432.1 67.69999999999999L472.1 116.8ZM472.9 73.5V126.2L470.6 123.1V73.5Q470.6 68.3 468.85 66.0Q467.1 63.699999999999996 463.0 63.699999999999996Q462.8 63.699999999999996 462.8 63.099999999999994Q462.8 62.5 463.0 62.5Q465.0 62.5 467.15 62.65Q469.3 62.8 471.8 62.8Q474.2 62.8 476.54999999999995 62.65Q478.9 62.5 480.9 62.5Q481.2 62.5 481.2 63.099999999999994Q481.2 63.699999999999996 480.9 63.699999999999996Q476.6 63.699999999999996 474.75 66.0Q472.9 68.3 472.9 73.5ZM536.0 126.2Q527.5 126.2 520.8 123.6Q514.1 121.0 509.5 116.45Q504.90000000000003 111.9 502.5 106.0Q500.1 100.1 500.1 93.4Q500.1 85.9 502.95000000000005 80.05Q505.80000000000007 74.19999999999999 510.90000000000003 70.0Q516.0 65.8 522.85 63.599999999999994Q529.7 61.4 537.6 61.4Q543.0 61.4 547.6500000000001 62.4Q552.3000000000001 63.4 555.4000000000001 65.3Q556.1 65.69999999999999 556.25 66.0Q556.4000000000001 66.3 556.5 67.5L557.7 79.3Q557.7 79.6 557.2 79.69999999999999Q556.7 79.8 556.5 79.4Q555.5 75.8 553.8 72.8Q552.1 69.8 549.6 67.65Q547.1 65.5 543.6500000000001 64.25Q540.2 63.0 535.7 63.0Q527.9000000000001 63.0 521.5500000000001 66.5Q515.2 70.0 511.50000000000006 76.5Q507.80000000000007 83.0 507.80000000000007 91.9Q507.80000000000007 98.0 509.70000000000005 103.85Q511.6 109.7 515.4000000000001 114.45Q519.2 119.2 525.0 121.95Q530.8000000000001 124.7 538.7 124.7Q543.4000000000001 124.7 546.25 123.5Q549.1 122.3 550.35 119.6Q551.6 116.9 551.6 112.5Q551.6 107.7 550.95 105.45Q550.3000000000001 103.2 547.95 102.5Q545.6 101.8 540.2 101.8Q539.6 101.8 539.6 101.0Q539.6 100.2 540.1 100.2Q546.5 100.6 551.7 100.65Q556.9000000000001 100.7 562.6 100.4Q563.1 100.4 563.1 101.1Q563.1 101.8 562.6 101.8Q560.3000000000001 101.7 559.2 102.45Q558.1 103.2 557.8 105.7Q557.5 108.2 557.5 113.5Q557.5 116.8 557.7 118.4Q557.9000000000001 120.0 558.0500000000001 120.75Q558.2 121.5 558.2 122.3Q558.2 122.9 558.0 123.1Q557.8000000000001 123.3 557.1 123.5Q552.0 124.6 546.45 125.4Q540.9000000000001 126.2 536.0 126.2ZM662.3 92.4 649.4 124.9Q649.3 125.3 648.3499999999999 125.3Q647.4 125.3 647.1999999999999 124.9L622.3 70.8Q621.1999999999999 68.1 620.0 66.55Q618.8 65.0 617.3499999999999 64.35Q615.9 63.699999999999996 613.8 63.699999999999996Q613.5 63.699999999999996 613.5 63.099999999999994Q613.5 62.5 613.8 62.5Q615.1999999999999 62.5 616.5 62.599999999999994Q617.8 62.699999999999996 619.2 62.75Q620.6 62.8 622.1 62.8Q624.9 62.8 627.05 62.75Q629.1999999999999 62.699999999999996 630.8499999999999 62.599999999999994Q632.5 62.5 634.0 62.5Q634.3 62.5 634.3 63.099999999999994Q634.3 63.699999999999996 634.0 63.699999999999996Q630.1 63.699999999999996 628.7 65.05Q627.3 66.4 629.1 70.4L651.3 118.1L647.6999999999999 122.9L660.8 90.19999999999999ZM707.4 62.5Q707.6 62.5 707.6 63.099999999999994Q707.6 63.699999999999996 707.4 63.699999999999996Q704.1 63.699999999999996 701.6 65.35Q699.1 67.0 697.2 71.6L675.9 124.9Q675.8 125.3 674.8499999999999 125.3Q673.9 125.3 673.6999999999999 124.9L648.9 70.8Q647.1999999999999 67.0 645.3499999999999 65.35Q643.5 63.699999999999996 640.6 63.699999999999996Q640.3 63.699999999999996 640.3 63.099999999999994Q640.3 62.5 640.6 62.5Q641.9 62.5 643.2 62.599999999999994Q644.5 62.699999999999996 645.8499999999999 62.75Q647.1999999999999 62.8 648.6999999999999 62.8Q651.9 62.8 653.8 62.65Q655.6999999999999 62.5 657.1999999999999 62.5Q657.5 62.5 657.5 63.099999999999994Q657.5 63.699999999999996 657.1999999999999 63.699999999999996Q654.1 63.699999999999996 653.85 64.85Q653.6 66.0 655.6 70.4L677.9 118.1L674.3 122.9L695.0 71.19999999999999Q696.5 67.4 695.0 65.55Q693.5 63.699999999999996 688.1999999999999 63.699999999999996Q687.9 63.699999999999996 687.9 63.099999999999994Q687.9 62.5 688.1999999999999 62.5Q690.6 62.5 692.8 62.65Q695.0 62.8 698.5 62.8Q701.3 62.8 703.0999999999999 62.65Q704.9 62.5 707.4 62.5ZM661.3 90.19999999999999 668.9 71.0Q670.5 67.1 669.8 65.39999999999999Q669.1 63.699999999999996 665.8 63.699999999999996Q665.5 63.699999999999996 665.5 63.099999999999994Q665.5 62.5 665.8 62.5Q666.8 62.5 667.65 62.599999999999994Q668.5 62.699999999999996 669.55 62.75Q670.6 62.8 672.3 62.8Q675.1 62.8 676.85 62.65Q678.6 62.5 681.0 62.5Q681.1999999999999 62.5 681.1999999999999 63.099999999999994Q681.1999999999999 63.699999999999996 681.0 63.699999999999996Q677.9 63.699999999999996 675.4 65.3Q672.9 66.9 671.1 71.6L662.8 92.4ZM738.9 116.9Q738.9 119.8 739.5 121.3Q740.1 122.8 741.95 123.3Q743.8 123.8 747.4 123.8Q747.7 123.8 747.7 124.4Q747.7 125.0 747.4 125.0Q745.0 125.0 742.05 124.9Q739.1 124.8 735.5 124.8Q732.2 124.8 729.1500000000001 124.9Q726.1 125.0 723.7 125.0Q723.4 125.0 723.4 124.4Q723.4 123.8 723.7 123.8Q727.3 123.8 729.2 123.3Q731.1 122.8 731.7 121.3Q732.3 119.8 732.3 116.9V70.6Q732.3 67.69999999999999 731.7 66.25Q731.1 64.8 729.2 64.25Q727.3 63.699999999999996 723.7 63.699999999999996Q723.4 63.699999999999996 723.4 63.099999999999994Q723.4 62.5 723.7 62.5Q726.1 62.5 729.1500000000001 62.65Q732.2 62.8 735.5 62.8Q739.1 62.8 742.1 62.65Q745.1 62.5 747.4 62.5Q747.7 62.5 747.7 63.099999999999994Q747.7 63.699999999999996 747.4 63.699999999999996Q743.8 63.699999999999996 741.95 64.3Q740.1 64.9 739.5 66.4Q738.9 67.9 738.9 70.8ZM782.7 70.69999999999999V116.5Q782.7 119.2 783.3000000000001 120.6Q783.9000000000001 122.0 785.6500000000001 122.45Q787.4000000000001 122.9 790.7 122.9H801.6Q807.4000000000001 122.9 810.8000000000001 119.25Q814.2 115.6 815.2 109.7Q815.2 109.4 815.75 109.45Q816.3000000000001 109.5 816.3000000000001 109.8Q816.0 112.5 815.7 116.35Q815.4000000000001 120.2 815.4000000000001 123.5Q815.4000000000001 125.0 813.9000000000001 125.0H767.7Q767.5 125.0 767.5 124.4Q767.5 123.8 767.7 123.8Q771.3000000000001 123.8 773.1500000000001 123.3Q775.0 122.8 775.6 121.3Q776.2 119.8 776.2 116.9V70.6Q776.2 67.69999999999999 775.6 66.25Q775.0 64.8 773.1500000000001 64.25Q771.3000000000001 63.699999999999996 767.7 63.699999999999996Q767.5 63.699999999999996 767.5 63.099999999999994Q767.5 62.5 767.7 62.5Q770.1 62.5 773.1 62.65Q776.1 62.8 779.4000000000001 62.8Q782.9000000000001 62.8 785.9000000000001 62.65Q788.9000000000001 62.5 791.2 62.5Q791.5 62.5 791.5 63.099999999999994Q791.5 63.699999999999996 791.2 63.699999999999996Q787.6 63.699999999999996 785.75 64.25Q783.9000000000001 64.8 783.3000000000001 66.3Q782.7 67.8 782.7 70.69999999999999ZM848.0 70.69999999999999V116.5Q848.0 119.2 848.6 120.6Q849.2 122.0 850.95 122.45Q852.7 122.9 856.0 122.9H866.9Q872.7 122.9 876.1 119.25Q879.5 115.6 880.5 109.7Q880.5 109.4 881.05 109.45Q881.6 109.5 881.6 109.8Q881.3 112.5 881.0 116.35Q880.7 120.2 880.7 123.5Q880.7 125.0 879.2 125.0H833.0Q832.8 125.0 832.8 124.4Q832.8 123.8 833.0 123.8Q836.6 123.8 838.45 123.3Q840.3 122.8 840.9 121.3Q841.5 119.8 841.5 116.9V70.6Q841.5 67.69999999999999 840.9 66.25Q840.3 64.8 838.45 64.25Q836.6 63.699999999999996 833.0 63.699999999999996Q832.8 63.699999999999996 832.8 63.099999999999994Q832.8 62.5 833.0 62.5Q835.4 62.5 838.4 62.65Q841.4 62.8 844.7 62.8Q848.2 62.8 851.2 62.65Q854.2 62.5 856.5 62.5Q856.8 62.5 856.8 63.099999999999994Q856.8 63.699999999999996 856.5 63.699999999999996Q852.9 63.699999999999996 851.05 64.25Q849.2 64.8 848.6 66.3Q848.0 67.8 848.0 70.69999999999999ZM931.4000000000001 126.2Q924.2 126.2 918.3500000000001 123.65Q912.5000000000001 121.1 908.3500000000001 116.6Q904.2 112.1 901.95 106.25Q899.7 100.4 899.7 93.8Q899.7 85.69999999999999 902.8500000000001 79.6Q906.0000000000001 73.5 911.2 69.45Q916.4000000000001 65.4 922.6000000000001 63.400000000000006Q928.8000000000001 61.4 934.9000000000001 61.4Q942.3000000000001 61.4 948.1500000000001 64.05Q954.0000000000001 66.69999999999999 958.1000000000001 71.19999999999999Q962.2 75.69999999999999 964.3500000000001 81.39999999999999Q966.5000000000001 87.1 966.5000000000001 93.1Q966.5000000000001 100.1 963.7 106.1Q960.9000000000001 112.1 956.0500000000001 116.6Q951.2 121.1 944.8500000000001 123.65Q938.5000000000001 126.2 931.4000000000001 126.2ZM934.9000000000001 124.1Q941.7 124.1 947.1000000000001 120.85Q952.5000000000001 117.6 955.7 111.3Q958.9000000000001 105.0 958.9000000000001 95.9Q958.9000000000001 86.5 955.45 79.25Q952.0000000000001 72.0 945.6500000000001 67.85Q939.3000000000001 63.699999999999996 930.7 63.699999999999996Q919.6 63.699999999999996 913.45 70.85Q907.3000000000001 78.0 907.3000000000001 90.3Q907.3000000000001 97.4 909.25 103.55000000000001Q911.2 109.7 914.9000000000001 114.35Q918.6 119.0 923.7 121.55Q928.8000000000001 124.1 934.9000000000001 124.1ZM1029.5 92.4 1016.6 124.9Q1016.5 125.3 1015.55 125.3Q1014.6 125.3 1014.4 124.9L989.5 70.8Q988.4 68.1 987.2 66.55Q986.0 65.0 984.55 64.35Q983.1 63.699999999999996 981.0 63.699999999999996Q980.7 63.699999999999996 980.7 63.099999999999994Q980.7 62.5 981.0 62.5Q982.4 62.5 983.7 62.599999999999994Q985.0 62.699999999999996 986.4000000000001 62.75Q987.8000000000001 62.8 989.3000000000001 62.8Q992.1 62.8 994.25 62.75Q996.4 62.699999999999996 998.05 62.599999999999994Q999.7 62.5 1001.2 62.5Q1001.5 62.5 1001.5 63.099999999999994Q1001.5 63.699999999999996 1001.2 63.699999999999996Q997.3000000000001 63.699999999999996 995.9000000000001 65.05Q994.5 66.4 996.3000000000001 70.4L1018.5 118.1L1014.9 122.9L1028.0 90.19999999999999ZM1074.6 62.5Q1074.8 62.5 1074.8 63.099999999999994Q1074.8 63.699999999999996 1074.6 63.699999999999996Q1071.3 63.699999999999996 1068.8 65.35Q1066.3 67.0 1064.4 71.6L1043.1 124.9Q1043.0 125.3 1042.05 125.3Q1041.1 125.3 1040.9 124.9L1016.1 70.8Q1014.4 67.0 1012.55 65.35Q1010.7 63.699999999999996 1007.8000000000001 63.699999999999996Q1007.5 63.699999999999996 1007.5 63.099999999999994Q1007.5 62.5 1007.8000000000001 62.5Q1009.1 62.5 1010.4000000000001 62.599999999999994Q1011.7 62.699999999999996 1013.05 62.75Q1014.4 62.8 1015.9 62.8Q1019.1 62.8 1021.0 62.65Q1022.9 62.5 1024.4 62.5Q1024.7 62.5 1024.7 63.099999999999994Q1024.7 63.699999999999996 1024.4 63.699999999999996Q1021.3000000000001 63.699999999999996 1021.0500000000001 64.85Q1020.8000000000001 66.0 1022.8000000000001 70.4L1045.1 118.1L1041.5 122.9L1062.2 71.19999999999999Q1063.7 67.4 1062.2 65.55Q1060.7 63.699999999999996 1055.4 63.699999999999996Q1055.1 63.699999999999996 1055.1 63.099999999999994Q1055.1 62.5 1055.4 62.5Q1057.8 62.5 1060.0 62.65Q1062.2 62.8 1065.7 62.8Q1068.5 62.8 1070.3 62.65Q1072.1 62.5 1074.6 62.5ZM1028.5 90.19999999999999 1036.1 71.0Q1037.7 67.1 1037.0 65.39999999999999Q1036.3 63.699999999999996 1033.0 63.699999999999996Q1032.7 63.699999999999996 1032.7 63.099999999999994Q1032.7 62.5 1033.0 62.5Q1034.0 62.5 1034.85 62.599999999999994Q1035.7 62.699999999999996 1036.75 62.75Q1037.8 62.8 1039.5 62.8Q1042.3 62.8 1044.05 62.65Q1045.8 62.5 1048.2 62.5Q1048.4 62.5 1048.4 63.099999999999994Q1048.4 63.699999999999996 1048.2 63.699999999999996Q1045.1 63.699999999999996 1042.6 65.3Q1040.1 66.9 1038.3 71.6L1030.0 92.4ZM1170.0000000000002 92.4 1157.1000000000001 124.9Q1157.0000000000002 125.3 1156.0500000000002 125.3Q1155.1000000000001 125.3 1154.9 124.9L1130.0000000000002 70.8Q1128.9 68.1 1127.7000000000003 66.55Q1126.5000000000002 65.0 1125.0500000000002 64.35Q1123.6000000000001 63.699999999999996 1121.5000000000002 63.699999999999996Q1121.2 63.699999999999996 1121.2 63.099999999999994Q1121.2 62.5 1121.5000000000002 62.5Q1122.9 62.5 1124.2000000000003 62.599999999999994Q1125.5000000000002 62.699999999999996 1126.9 62.75Q1128.3000000000002 62.8 1129.8000000000002 62.8Q1132.6000000000001 62.8 1134.75 62.75Q1136.9 62.699999999999996 1138.5500000000002 62.599999999999994Q1140.2 62.5 1141.7 62.5Q1142.0000000000002 62.5 1142.0000000000002 63.099999999999994Q1142.0000000000002 63.699999999999996 1141.7 63.699999999999996Q1137.8000000000002 63.699999999999996 1136.4 65.05Q1135.0000000000002 66.4 1136.8000000000002 70.4L1159.0000000000002 118.1L1155.4 122.9L1168.5000000000002 90.19999999999999ZM1215.1000000000001 62.5Q1215.3000000000002 62.5 1215.3000000000002 63.099999999999994Q1215.3000000000002 63.699999999999996 1215.1000000000001 63.699999999999996Q1211.8000000000002 63.699999999999996 1209.3000000000002 65.35Q1206.8000000000002 67.0 1204.9 71.6L1183.6000000000001 124.9Q1183.5000000000002 125.3 1182.5500000000002 125.3Q1181.6000000000001 125.3 1181.4 124.9L1156.6000000000001 70.8Q1154.9 67.0 1153.0500000000002 65.35Q1151.2 63.699999999999996 1148.3000000000002 63.699999999999996Q1148.0000000000002 63.699999999999996 1148.0000000000002 63.099999999999994Q1148.0000000000002 62.5 1148.3000000000002 62.5Q1149.6000000000001 62.5 1150.9 62.599999999999994Q1152.2 62.699999999999996 1153.5500000000002 62.75Q1154.9 62.8 1156.4 62.8Q1159.6000000000001 62.8 1161.5 62.65Q1163.4 62.5 1164.9 62.5Q1165.2 62.5 1165.2 63.099999999999994Q1165.2 63.699999999999996 1164.9 63.699999999999996Q1161.8000000000002 63.699999999999996 1161.5500000000002 64.85Q1161.3000000000002 66.0 1163.3000000000002 70.4L1185.6000000000001 118.1L1182.0000000000002 122.9L1202.7 71.19999999999999Q1204.2 67.4 1202.7 65.55Q1201.2 63.699999999999996 1195.9 63.699999999999996Q1195.6000000000001 63.699999999999996 1195.6000000000001 63.099999999999994Q1195.6000000000001 62.5 1195.9 62.5Q1198.3000000000002 62.5 1200.5 62.65Q1202.7 62.8 1206.2 62.8Q1209.0000000000002 62.8 1210.8000000000002 62.65Q1212.6000000000001 62.5 1215.1000000000001 62.5ZM1169.0000000000002 90.19999999999999 1176.6000000000001 71.0Q1178.2 67.1 1177.5 65.39999999999999Q1176.8000000000002 63.699999999999996 1173.5000000000002 63.699999999999996Q1173.2 63.699999999999996 1173.2 63.099999999999994Q1173.2 62.5 1173.5000000000002 62.5Q1174.5000000000002 62.5 1175.3500000000001 62.599999999999994Q1176.2 62.699999999999996 1177.25 62.75Q1178.3000000000002 62.8 1180.0000000000002 62.8Q1182.8000000000002 62.8 1184.5500000000002 62.65Q1186.3000000000002 62.5 1188.7 62.5Q1188.9 62.5 1188.9 63.099999999999994Q1188.9 63.699999999999996 1188.7 63.699999999999996Q1185.6000000000001 63.699999999999996 1183.1000000000001 65.3Q1180.6000000000001 66.9 1178.8000000000002 71.6L1170.5000000000002 92.4ZM1283.8 70.8Q1283.8 67.9 1283.2 66.4Q1282.6000000000001 64.9 1280.75 64.3Q1278.9 63.699999999999996 1275.0 63.699999999999996Q1274.7 63.699999999999996 1274.7 63.099999999999994Q1274.7 62.5 1275.0 62.5Q1277.4 62.5 1280.4 62.65Q1283.4 62.8 1287.1000000000001 62.8Q1290.4 62.8 1293.5 62.65Q1296.6000000000001 62.5 1298.9 62.5Q1299.2 62.5 1299.2 63.099999999999994Q1299.2 63.699999999999996 1298.9 63.699999999999996Q1295.2 63.699999999999996 1293.3000000000002 64.25Q1291.4 64.8 1290.8000000000002 66.25Q1290.2 67.69999999999999 1290.2 70.6V116.9Q1290.2 119.8 1290.8000000000002 121.3Q1291.4 122.8 1293.3000000000002 123.3Q1295.2 123.8 1298.9 123.8Q1299.2 123.8 1299.2 124.4Q1299.2 125.0 1298.9 125.0Q1296.6000000000001 125.0 1293.5 124.9Q1290.4 124.8 1287.1000000000001 124.8Q1283.4 124.8 1280.4 124.9Q1277.4 125.0 1275.0 125.0Q1274.7 125.0 1274.7 124.4Q1274.7 123.8 1275.0 123.8Q1278.9 123.8 1280.75 123.3Q1282.6000000000001 122.8 1283.2 121.3Q1283.8 119.8 1283.8 116.9ZM1241.9 93.5V91.4H1286.6000000000001V93.5ZM1239.0 116.9V70.6Q1239.0 67.69999999999999 1238.35 66.25Q1237.7 64.8 1235.85 64.25Q1234.0 63.699999999999996 1230.3 63.699999999999996Q1230.1000000000001 63.699999999999996 1230.1000000000001 63.099999999999994Q1230.1000000000001 62.5 1230.3 62.5Q1232.7 62.5 1235.75 62.65Q1238.8 62.8 1242.1000000000001 62.8Q1245.8 62.8 1248.8 62.65Q1251.8 62.5 1254.2 62.5Q1254.4 62.5 1254.4 63.099999999999994Q1254.4 63.699999999999996 1254.2 63.699999999999996Q1250.5 63.699999999999996 1248.6 64.3Q1246.7 64.9 1246.0500000000002 66.4Q1245.4 67.9 1245.4 70.8V116.9Q1245.4 119.8 1246.0 121.3Q1246.6000000000001 122.8 1248.5500000000002 123.3Q1250.5 123.8 1254.2 123.8Q1254.4 123.8 1254.4 124.4Q1254.4 125.0 1254.2 125.0Q1251.7 125.0 1248.75 124.9Q1245.8 124.8 1242.1000000000001 124.8Q1238.8 124.8 1235.7 124.9Q1232.6000000000001 125.0 1230.2 125.0Q1230.0 125.0 1230.0 124.4Q1230.0 123.8 1230.2 123.8Q1233.9 123.8 1235.8000000000002 123.3Q1237.7 122.8 1238.35 121.3Q1239.0 119.8 1239.0 116.9ZM1334.5000000000002 116.9Q1334.5000000000002 119.8 1335.1000000000001 121.3Q1335.7 122.8 1337.5500000000002 123.3Q1339.4 123.8 1343.0000000000002 123.8Q1343.3000000000002 123.8 1343.3000000000002 124.4Q1343.3000000000002 125.0 1343.0000000000002 125.0Q1340.6000000000001 125.0 1337.65 124.9Q1334.7 124.8 1331.1000000000001 124.8Q1327.8000000000002 124.8 1324.75 124.9Q1321.7 125.0 1319.3000000000002 125.0Q1319.0000000000002 125.0 1319.0000000000002 124.4Q1319.0000000000002 123.8 1319.3000000000002 123.8Q1322.9 123.8 1324.8000000000002 123.3Q1326.7 122.8 1327.3000000000002 121.3Q1327.9 119.8 1327.9 116.9V70.6Q1327.9 67.69999999999999 1327.3000000000002 66.25Q1326.7 64.8 1324.8000000000002 64.25Q1322.9 63.699999999999996 1319.3000000000002 63.699999999999996Q1319.0000000000002 63.699999999999996 1319.0000000000002 63.099999999999994Q1319.0000000000002 62.5 1319.3000000000002 62.5Q1321.7 62.5 1324.75 62.65Q1327.8000000000002 62.8 1331.1000000000001 62.8Q1334.7 62.8 1337.7 62.65Q1340.7 62.5 1343.0000000000002 62.5Q1343.3000000000002 62.5 1343.3000000000002 63.099999999999994Q1343.3000000000002 63.699999999999996 1343.0000000000002 63.699999999999996Q1339.4 63.699999999999996 1337.5500000000002 64.3Q1335.7 64.9 1335.1000000000001 66.4Q1334.5000000000002 67.9 1334.5000000000002 70.8ZM1374.3000000000002 74.19999999999999Q1374.3000000000002 78.3 1376.3500000000001 81.25Q1378.4 84.19999999999999 1381.6000000000001 86.39999999999999Q1384.8000000000002 88.6 1388.4 90.8Q1392.1000000000001 92.9 1395.5500000000002 95.30000000000001Q1399.0000000000002 97.7 1401.2500000000002 101.0Q1403.5000000000002 104.3 1403.5000000000002 109.1Q1403.5000000000002 113.9 1401.1000000000004 117.75Q1398.7000000000003 121.6 1394.15 123.9Q1389.6000000000001 126.2 1382.9 126.2Q1380.5000000000002 126.2 1378.15 125.85Q1375.8000000000002 125.5 1373.4500000000003 124.7Q1371.1000000000001 123.9 1368.8000000000002 122.7Q1368.3000000000002 122.4 1368.15 121.95Q1368.0000000000002 121.5 1367.9 120.8L1366.6000000000001 107.2Q1366.5000000000002 106.7 1367.0500000000002 106.65Q1367.6000000000001 106.6 1367.7000000000003 107.0Q1368.4 110.0 1369.7000000000003 113.1Q1371.0000000000002 116.2 1373.1000000000004 118.80000000000001Q1375.2000000000003 121.4 1378.2000000000003 123.0Q1381.2000000000003 124.6 1385.2000000000003 124.6Q1388.1000000000001 124.6 1390.8500000000001 123.5Q1393.6000000000001 122.4 1395.3500000000001 119.9Q1397.1000000000001 117.4 1397.1000000000001 113.1Q1397.1000000000001 108.2 1394.9500000000003 104.95Q1392.8000000000002 101.7 1389.5000000000002 99.30000000000001Q1386.2000000000003 96.9 1382.5000000000002 94.8Q1379.0000000000002 92.6 1375.7500000000002 90.3Q1372.5000000000002 88.0 1370.4500000000003 84.85Q1368.4 81.69999999999999 1368.4 77.0Q1368.4 71.69999999999999 1371.1000000000001 68.25Q1373.8000000000002 64.8 1378.1000000000001 63.099999999999994Q1382.4 61.4 1387.0000000000002 61.4Q1389.8000000000002 61.4 1392.8000000000002 61.95Q1395.8000000000002 62.5 1398.7000000000003 63.8Q1399.5000000000002 64.1 1399.8500000000004 64.55Q1400.2000000000003 65.0 1400.2000000000003 65.5L1400.9 76.9Q1400.9 77.3 1400.4 77.35Q1399.9 77.4 1399.7000000000003 77.0Q1399.5000000000002 75.0 1398.6000000000004 72.55Q1397.7000000000003 70.1 1396.0000000000002 67.89999999999999Q1394.3000000000002 65.69999999999999 1391.7000000000003 64.3Q1389.1000000000001 62.9 1385.4 62.9Q1381.5000000000002 62.9 1379.0500000000002 64.55Q1376.6000000000001 66.19999999999999 1375.4500000000003 68.75Q1374.3000000000002 71.3 1374.3000000000002 74.19999999999999ZM1440.1000000000001 116.5Q1440.1000000000001 119.5 1440.9 121.05Q1441.7 122.6 1444.3000000000002 123.19999999999999Q1446.9 123.8 1452.0 123.8Q1452.3000000000002 123.8 1452.3000000000002 124.4Q1452.3000000000002 125.0 1452.0 125.0Q1448.8000000000002 125.0 1445.0500000000002 124.9Q1441.3000000000002 124.8 1436.9 124.8Q1433.6000000000001 124.8 1430.5500000000002 124.9Q1427.5 125.0 1425.1000000000001 125.0Q1424.9 125.0 1424.9 124.4Q1424.9 123.8 1425.1000000000001 123.8Q1428.8000000000002 123.8 1430.6000000000001 123.3Q1432.4 122.8 1433.0 121.3Q1433.6000000000001 119.8 1433.6000000000001 116.9V70.6Q1433.6000000000001 67.69999999999999 1433.0 66.25Q1432.4 64.8 1430.6000000000001 64.25Q1428.8000000000002 63.699999999999996 1425.1000000000001 63.699999999999996Q1424.9 63.699999999999996 1424.9 63.099999999999994Q1424.9 62.5 1425.1000000000001 62.5Q1427.5 62.5 1430.5 62.65Q1433.5 62.8 1436.8000000000002 62.8Q1439.4 62.8 1443.15 62.5Q1446.9 62.199999999999996 1450.7 62.199999999999996Q1456.4 62.199999999999996 1460.95 63.89999999999999Q1465.5 65.6 1468.2 69.19999999999999Q1470.9 72.8 1471.0 78.6Q1471.0 83.9 1469.0500000000002 87.7Q1467.1000000000001 91.5 1463.8500000000001 93.95Q1460.6000000000001 96.4 1456.7000000000003 97.6Q1452.8000000000002 98.8 1448.9 98.8Q1447.7 98.8 1446.45 98.69999999999999Q1445.2 98.6 1444.1000000000001 98.3Q1443.7 98.2 1443.85 97.55000000000001Q1444.0 96.9 1444.3000000000002 97.0Q1445.2 97.2 1446.15 97.30000000000001Q1447.1000000000001 97.4 1447.9 97.4Q1452.0 97.4 1455.6 95.6Q1459.2 93.8 1461.4 90.05Q1463.6000000000001 86.3 1463.6000000000001 80.69999999999999Q1463.6000000000001 75.19999999999999 1461.6000000000001 71.44999999999999Q1459.6000000000001 67.69999999999999 1456.1000000000001 65.69999999999999Q1452.6000000000001 63.699999999999996 1448.3000000000002 63.699999999999996Q1445.0 63.699999999999996 1443.25 64.05Q1441.5 64.4 1440.8000000000002 65.9Q1440.1000000000001 67.4 1440.1000000000001 70.8ZM1533.4 125.0H1491.5Q1491.3 125.0 1491.3 124.4Q1491.3 123.8 1491.5 123.8Q1495.2 123.8 1497.0 123.3Q1498.8 122.8 1499.45 121.3Q1500.1000000000001 119.8 1500.1000000000001 116.9V70.6Q1500.1000000000001 67.69999999999999 1499.45 66.25Q1498.8 64.8 1497.0 64.25Q1495.2 63.699999999999996 1491.5 63.699999999999996Q1491.3 63.699999999999996 1491.3 63.099999999999994Q1491.3 62.5 1491.5 62.5H1531.7Q1532.6000000000001 62.5 1532.6000000000001 63.4L1532.8 75.69999999999999Q1532.8 76.0 1532.25 76.05Q1531.7 76.1 1531.7 75.8Q1531.4 70.4 1528.45 67.5Q1525.5 64.6 1520.8 64.6H1514.7Q1511.3 64.6 1509.55 65.1Q1507.8 65.6 1507.15 67.0Q1506.5 68.4 1506.5 71.1V116.5Q1506.5 119.1 1507.15 120.5Q1507.8 121.9 1509.45 122.4Q1511.1000000000001 122.9 1514.4 122.9H1522.4Q1527.2 122.9 1530.45 119.45Q1533.7 116.0 1534.7 110.1Q1534.7 109.8 1535.3000000000002 109.9Q1535.9 110.0 1535.9 110.3Q1535.5 112.9 1535.25 116.6Q1535.0 120.3 1535.0 123.5Q1535.0 125.0 1533.4 125.0ZM1527.8 101.7Q1527.8 97.3 1525.65 95.4Q1523.5 93.5 1518.5 93.5H1503.5V91.4H1518.8Q1523.6000000000001 91.4 1525.65 89.75Q1527.7 88.1 1527.7 84.4Q1527.7 84.19999999999999 1528.3000000000002 84.19999999999999Q1528.9 84.19999999999999 1528.9 84.4Q1528.9 87.4 1528.85 89.05Q1528.8 90.69999999999999 1528.8 92.5Q1528.8 94.8 1528.9 97.0Q1529.0 99.2 1529.0 101.7Q1529.0 101.9 1528.4 101.9Q1527.8 101.9 1527.8 101.7ZM1608.3000000000002 125.0Q1606.6000000000001 125.0 1602.8500000000001 121.15Q1599.1000000000001 117.3 1593.75 110.05Q1588.4 102.8 1581.8000000000002 92.9L1587.4 91.19999999999999Q1595.9 103.3 1601.8500000000001 110.44999999999999Q1607.8000000000002 117.6 1612.3500000000001 120.69999999999999Q1616.9 123.8 1621.1000000000001 123.8Q1621.4 123.8 1621.4 124.4Q1621.4 125.0 1621.1000000000001 125.0Q1616.1000000000001 125.0 1612.9500000000003 125.0Q1609.8000000000002 125.0 1608.3000000000002 125.0ZM1583.1000000000001 62.199999999999996Q1591.1000000000001 62.199999999999996 1595.3500000000001 65.85Q1599.6000000000001 69.5 1599.6000000000001 75.4Q1599.6000000000001 80.8 1596.4500000000003 85.15Q1593.3000000000002 89.5 1588.15 92.0Q1583.0 94.5 1576.9 94.5Q1575.9 94.5 1574.65 94.4Q1573.4 94.3 1572.4 94.2V116.9Q1572.4 119.8 1572.95 121.3Q1573.5 122.8 1575.35 123.3Q1577.2 123.8 1580.9 123.8Q1581.2 123.8 1581.2 124.4Q1581.2 125.0 1580.9 125.0Q1578.5 125.0 1575.5500000000002 124.9Q1572.6000000000001 124.8 1569.1000000000001 124.8Q1565.8000000000002 124.8 1562.75 124.9Q1559.7 125.0 1557.2 125.0Q1557.0 125.0 1557.0 124.4Q1557.0 123.8 1557.2 123.8Q1560.9 123.8 1562.75 123.3Q1564.6000000000001 122.8 1565.3000000000002 121.3Q1566.0 119.8 1566.0 116.9V70.6Q1566.0 67.69999999999999 1565.35 66.25Q1564.7 64.8 1562.9 64.25Q1561.1000000000001 63.699999999999996 1557.4 63.699999999999996Q1557.1000000000001 63.699999999999996 1557.1000000000001 63.099999999999994Q1557.1000000000001 62.5 1557.4 62.5Q1559.8000000000002 62.5 1562.8000000000002 62.65Q1565.8000000000002 62.8 1569.1000000000001 62.8Q1572.2 62.8 1576.25 62.5Q1580.3000000000002 62.199999999999996 1583.1000000000001 62.199999999999996ZM1592.8000000000002 78.3Q1592.8000000000002 72.8 1591.15 69.6Q1589.5 66.4 1586.5 65.05Q1583.5 63.699999999999996 1579.3000000000002 63.699999999999996Q1575.6000000000001 63.699999999999996 1574.0 65.0Q1572.4 66.3 1572.4 70.8V91.8Q1573.8000000000002 92.0 1575.4 92.1Q1577.0 92.19999999999999 1578.3000000000002 92.19999999999999Q1586.4 92.19999999999999 1589.6000000000001 88.64999999999999Q1592.8000000000002 85.1 1592.8000000000002 78.3ZM1678.4 125.0H1636.5Q1636.3 125.0 1636.3 124.4Q1636.3 123.8 1636.5 123.8Q1640.2 123.8 1642.0 123.3Q1643.8 122.8 1644.45 121.3Q1645.1000000000001 119.8 1645.1000000000001 116.9V70.6Q1645.1000000000001 67.69999999999999 1644.45 66.25Q1643.8 64.8 1642.0 64.25Q1640.2 63.699999999999996 1636.5 63.699999999999996Q1636.3 63.699999999999996 1636.3 63.099999999999994Q1636.3 62.5 1636.5 62.5H1676.7Q1677.6000000000001 62.5 1677.6000000000001 63.4L1677.8 75.69999999999999Q1677.8 76.0 1677.25 76.05Q1676.7 76.1 1676.7 75.8Q1676.4 70.4 1673.45 67.5Q1670.5 64.6 1665.8 64.6H1659.7Q1656.3 64.6 1654.55 65.1Q1652.8 65.6 1652.15 67.0Q1651.5 68.4 1651.5 71.1V116.5Q1651.5 119.1 1652.15 120.5Q1652.8 121.9 1654.45 122.4Q1656.1000000000001 122.9 1659.4 122.9H1667.4Q1672.2 122.9 1675.45 119.45Q1678.7 116.0 1679.7 110.1Q1679.7 109.8 1680.3000000000002 109.9Q1680.9 110.0 1680.9 110.3Q1680.5 112.9 1680.25 116.6Q1680.0 120.3 1680.0 123.5Q1680.0 125.0 1678.4 125.0ZM1672.8 101.7Q1672.8 97.3 1670.65 95.4Q1668.5 93.5 1663.5 93.5H1648.5V91.4H1663.8Q1668.6000000000001 91.4 1670.65 89.75Q1672.7 88.1 1672.7 84.4Q1672.7 84.19999999999999 1673.3000000000002 84.19999999999999Q1673.9 84.19999999999999 1673.9 84.4Q1673.9 87.4 1673.85 89.05Q1673.8 90.69999999999999 1673.8 92.5Q1673.8 94.8 1673.9 97.0Q1674.0 99.2 1674.0 101.7Q1674.0 101.9 1673.4 101.9Q1672.8 101.9 1672.8 101.7ZM1753.3000000000002 125.0Q1751.6000000000001 125.0 1747.8500000000001 121.15Q1744.1000000000001 117.3 1738.75 110.05Q1733.4 102.8 1726.8000000000002 92.9L1732.4 91.19999999999999Q1740.9 103.3 1746.8500000000001 110.44999999999999Q1752.8000000000002 117.6 1757.3500000000001 120.69999999999999Q1761.9 123.8 1766.1000000000001 123.8Q1766.4 123.8 1766.4 124.4Q1766.4 125.0 1766.1000000000001 125.0Q1761.1000000000001 125.0 1757.9500000000003 125.0Q1754.8000000000002 125.0 1753.3000000000002 125.0ZM1728.1000000000001 62.199999999999996Q1736.1000000000001 62.199999999999996 1740.3500000000001 65.85Q1744.6000000000001 69.5 1744.6000000000001 75.4Q1744.6000000000001 80.8 1741.4500000000003 85.15Q1738.3000000000002 89.5 1733.15 92.0Q1728.0 94.5 1721.9 94.5Q1720.9 94.5 1719.65 94.4Q1718.4 94.3 1717.4 94.2V116.9Q1717.4 119.8 1717.95 121.3Q1718.5 122.8 1720.35 123.3Q1722.2 123.8 1725.9 123.8Q1726.2 123.8 1726.2 124.4Q1726.2 125.0 1725.9 125.0Q1723.5 125.0 1720.5500000000002 124.9Q1717.6000000000001 124.8 1714.1000000000001 124.8Q1710.8000000000002 124.8 1707.75 124.9Q1704.7 125.0 1702.2 125.0Q1702.0 125.0 1702.0 124.4Q1702.0 123.8 1702.2 123.8Q1705.9 123.8 1707.75 123.3Q1709.6000000000001 122.8 1710.3000000000002 121.3Q1711.0 119.8 1711.0 116.9V70.6Q1711.0 67.69999999999999 1710.35 66.25Q1709.7 64.8 1707.9 64.25Q1706.1000000000001 63.699999999999996 1702.4 63.699999999999996Q1702.1000000000001 63.699999999999996 1702.1000000000001 63.099999999999994Q1702.1000000000001 62.5 1702.4 62.5Q1704.8000000000002 62.5 1707.8000000000002 62.65Q1710.8000000000002 62.8 1714.1000000000001 62.8Q1717.2 62.8 1721.25 62.5Q1725.3000000000002 62.199999999999996 1728.1000000000001 62.199999999999996ZM1737.8000000000002 78.3Q1737.8000000000002 72.8 1736.15 69.6Q1734.5 66.4 1731.5 65.05Q1728.5 63.699999999999996 1724.3000000000002 63.699999999999996Q1720.6000000000001 63.699999999999996 1719.0 65.0Q1717.4 66.3 1717.4 70.8V91.8Q1718.8000000000002 92.0 1720.4 92.1Q1722.0 92.19999999999999 1723.3000000000002 92.19999999999999Q1731.4 92.19999999999999 1734.6000000000001 88.64999999999999Q1737.8000000000002 85.1 1737.8000000000002 78.3Z"/><path d="M1797.645 125.0V99.872H1800.669V122.372H1812.585V125.0ZM1826.445 125.0V99.872H1829.469V122.372H1841.385V125.0ZM1862.5529999999999 125.432Q1857.945 125.432 1855.695 122.084Q1853.445 118.736 1853.445 112.436Q1853.445 106.136 1855.695 102.788Q1857.945 99.44 1862.5529999999999 99.44Q1864.281 99.44 1865.541 99.908Q1866.801 100.376 1867.701 101.168Q1868.6009999999999 101.96000000000001 1869.213 102.95Q1869.825 103.94 1870.293 104.94800000000001L1867.701 106.136Q1867.377 105.30799999999999 1866.945 104.57Q1866.513 103.832 1865.9189999999999 103.274Q1865.325 102.71600000000001 1864.5149999999999 102.392Q1863.705 102.068 1862.5529999999999 102.068Q1859.565 102.068 1858.107 104.336Q1856.649 106.604 1856.649 110.384V114.488Q1856.649 118.268 1858.107 120.536Q1859.565 122.804 1862.5529999999999 122.804Q1863.705 122.804 1864.5149999999999 122.48Q1865.325 122.156 1865.9189999999999 121.59800000000001Q1866.513 121.04 1866.945 120.30199999999999Q1867.377 119.564 1867.701 118.736L1870.293 119.924Q1869.825 120.968 1869.213 121.94Q1868.6009999999999 122.912 1867.701 123.70400000000001Q1866.801 124.496 1865.541 124.964Q1864.281 125.432 1862.5529999999999 125.432Z"/></g></svg>
+          <p class="footer-tag">
+            Willow Academy is the learning pillar of Willow. Calm PDF guides
+            for neurodivergent students.
+          </p>
+          <p class="footer-tag">Learn clearly. Begin gently. Keep what is useful.</p>
         </div>
         <nav class="footer-nav" aria-label="Footer">
           <div>
-            <h3>Studio</h3>
+            <h3>Academy</h3>
             <ul role="list">
               <li><a href="#about">About</a></li>
               <li><a href="#library">Library</a></li>
@@ -701,15 +696,27 @@
           <div>
             <h3>Legal</h3>
             <ul role="list">
-              <li><a href="#privacy">Privacy</a></li>
-              <li><a href="#terms">Terms</a></li>
+              <li><a href="privacy.html">Privacy</a></li>
+              <li><a href="terms.html">Terms</a></li>
+              <li><a href="notices.html">Notices</a></li>
               <li><a href="mailto:hello@wwilloww.ai">Email us</a></li>
             </ul>
           </div>
         </nav>
-        <p class="footer-meta">
-          © <span id="year">2025</span> Willow &middot; Made quietly, with care.
-        </p>
+        <div class="footer-legal">
+          <p>
+            © <span id="year">2026</span> Weeping Willow Whisperer LLC ·
+            1664 Beryl Street, San Diego, CA 92109 · weepingwillowwhisperer.ai ·
+            All rights reserved.
+          </p>
+          <p>
+            Willow Academy is a Willow pillar, owned and operated by Weeping
+            Willow Whisperer LLC. Its guides are general study supports, not
+            medical, mental health, legal or academic advice. Willow Academy
+            is not an accredited school. Checkout and downloads are handled
+            by Payhip.
+          </p>
+        </div>
       </div>
     </footer>
 
