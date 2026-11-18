@@ -1,4 +1,4 @@
-/* wwilloww.ai — minimal interactivity */
+/* Willow Academy (willowpdf.com): minimal interactivity */
 
 (function () {
   "use strict";
@@ -7,64 +7,71 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ---------- Theme toggle (light / dark) ----------
+  // ---------- Reading theme (Daylight / Dusk / Mist) ----------
+  // The inline script in <head> sets the first theme before paint. This block
+  // wires the switch, remembers the choice on this device, and follows the
+  // system's dark setting until the reader chooses.
   var root = document.documentElement;
-  var toggle = document.getElementById("themeToggle");
-  var userThemeChoice = null;
+  var THEMES = ["daylight", "dusk", "mist"];
+  var THEME_KEY = "academy-theme";
+  var themeButtons = document.querySelectorAll("[data-theme-choice]");
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
+  var userChoseTheme = false;
 
-  function setTheme(theme, persist) {
-    if (theme === "dark") {
-      root.setAttribute("data-theme", "dark");
-    } else {
-      root.removeAttribute("data-theme");
+  function readSavedTheme() {
+    try {
+      var saved = window.localStorage.getItem(THEME_KEY);
+      return THEMES.indexOf(saved) > -1 ? saved : null;
+    } catch (e) {
+      return null; // storage can be unavailable (private mode, embedded previews)
     }
-    if (toggle) {
-      var isDark = theme === "dark";
-      toggle.setAttribute("aria-pressed", isDark ? "true" : "false");
-      toggle.setAttribute(
-        "aria-label",
-        isDark ? "Switch to light mode" : "Switch to dark mode"
+  }
+
+  function setTheme(theme) {
+    if (THEMES.indexOf(theme) === -1) theme = "daylight";
+    root.setAttribute("data-theme", theme);
+    themeButtons.forEach(function (button) {
+      button.setAttribute(
+        "aria-pressed",
+        button.getAttribute("data-theme-choice") === theme ? "true" : "false"
       );
-    }
-    if (persist) {
-      userThemeChoice = theme;
-    }
-  }
-
-  // Initial theme: system preference > light. User choice is in-memory only
-  // because the preview iframe does not allow browser storage APIs.
-  var prefersDark =
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
-  setTheme(prefersDark ? "dark" : "light", false);
-
-  if (toggle) {
-    toggle.addEventListener("click", function () {
-      var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      setTheme(next, true);
     });
+    if (themeMeta && window.getComputedStyle) {
+      var ground = window
+        .getComputedStyle(root)
+        .getPropertyValue("--ground")
+        .trim();
+      if (ground) themeMeta.setAttribute("content", ground);
+    }
   }
 
-  // Honor system theme changes if the user hasn't chosen explicitly
-  if (window.matchMedia) {
-    var mql = window.matchMedia("(prefers-color-scheme: dark)");
-    var onChange = function (e) {
-      if (userThemeChoice) return; // user has chosen during this page session
-      setTheme(e.matches ? "dark" : "light", false);
-    };
-    if (mql.addEventListener) mql.addEventListener("change", onChange);
-    else if (mql.addListener) mql.addListener(onChange);
-  }
+  var systemDark =
+    window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
+  var savedTheme = readSavedTheme();
+  if (savedTheme) userChoseTheme = true;
+  setTheme(savedTheme || (systemDark && systemDark.matches ? "dusk" : "daylight"));
 
-  // ---------- Header scroll state ----------
-  var header = document.querySelector(".site-header");
-  if (header) {
-    var setHeaderState = function () {
-      if (window.scrollY > 4) header.classList.add("is-scrolled");
-      else header.classList.remove("is-scrolled");
+  themeButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      var choice = button.getAttribute("data-theme-choice");
+      userChoseTheme = true;
+      setTheme(choice);
+      try {
+        window.localStorage.setItem(THEME_KEY, choice);
+      } catch (e) {
+        /* the choice still holds for this visit */
+      }
+    });
+  });
+
+  if (systemDark) {
+    var onSystemChange = function (e) {
+      if (userChoseTheme) return;
+      setTheme(e.matches ? "dusk" : "daylight");
     };
-    setHeaderState();
-    window.addEventListener("scroll", setHeaderState, { passive: true });
+    if (systemDark.addEventListener)
+      systemDark.addEventListener("change", onSystemChange);
+    else if (systemDark.addListener) systemDark.addListener(onSystemChange);
   }
 
   // ---------- FAQ: open one at a time, but allow all closed ----------
@@ -155,7 +162,7 @@
         form.reset();
       } catch (error) {
         setStatus(
-          "We could not save your signup just now. Please try again, or email hello@wwilloww.ai.",
+          "We could not save your signup just now. Please try again, or email weepingwillowwhisperer@gmail.com.",
           true
         );
       } finally {

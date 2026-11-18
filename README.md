@@ -1,26 +1,40 @@
-# wwilloww.ai
+# Willow Academy storefront (willowpdf.com)
 
-Storefront for calm, accessible PDF study guides for neurodivergent students (high school through postgraduate).
+Willow Academy is the learning pillar of Willow, owned and operated by Weeping Willow Whisperer LLC. This repository holds its storefront: calm, accessible PDF study guides for neurodivergent students (high school through postgraduate), sold through Payhip.
 
-Live: https://willowpdf.com (wwilloww.ai redirects here)
+Live: https://willowpdf.com
 
 ## What's here
 
 | Path | Purpose |
 | --- | --- |
-| `index.html` | The whole storefront (single page) |
-| `styles.css` | Willow palette, light/dark themes, responsive layout |
-| `script.js` | Theme toggle, FAQ accordion, waitlist form |
-| `api/waitlist.js` | Vercel serverless function that saves waitlist signups to Google Sheets |
+| `index.html` | The storefront (single page) |
+| `privacy.html`, `terms.html`, `notices.html` | Legal pages, served at `/privacy`, `/terms`, `/notices` |
+| `tokens.css` | Willow brand v2 tokens. A copy of `willow-brand/tokens/tokens.css`; never edit it here |
+| `styles.css` | Layout and components. Uses only the variables in `tokens.css`, no hex values |
+| `script.js` | Reading-theme switch, FAQ accordion, updates form |
+| `logos/` | The W mark used as the tab icon, plus the Academy lockup and company line as files, unchanged from `willow-brand/logos` |
+| `og.png` | Social share image |
+| `api/waitlist.js` | Vercel serverless function that saves update-list signups |
 | `vercel.json` | Clean URLs and security headers |
 
-There is no build step. Vercel serves the static files as-is and runs `api/waitlist.js` as a function.
+There is no build step. Vercel serves the static files as-is and runs `api/waitlist.js` as a function. The header and footer are repeated in each of the four HTML pages, so a change to either must be made in all four.
+
+## Brand
+
+The site follows Willow brand v2 (`weepingwillowwhisperer/willow-brand`, commit `13b1302`).
+
+- To pick up a brand change, copy the new `tokens/tokens.css` over `tokens.css` and the new logo files over `logos/`. The header lockup (`willow-academy`) and the footer company line (`wwwllc-line`) are also placed inline in each HTML page, with the same paths as the brand files; `styles.css` switches them to Moon on the Dusk theme.
+- Themes: Daylight (default), Dusk and Mist, chosen with the switch in the header and remembered in the browser under `academy-theme`. Dusk is used on first visit when the system is set to dark.
+- Public copy says "Willow Academy". The legal name, Weeping Willow Whisperer LLC, appears only in the footer imprint, the legal pages and structured data.
 
 ## Deploying
 
-The Vercel project `wwilloww-ai` is connected to this repo. Every push to `main` deploys to production at `willowpdf.com`. Other branches get preview URLs.
+**The Vercel project `wwilloww-ai` is shared with Willow Nest (wwilloww.ai).** An ordinary production deployment or project-wide promotion can put this storefront on Nest's addresses, or Nest on these.
 
-Domain: registered at Wix, DNS points to Vercel (`A @ 76.76.21.21`, `CNAME www cname.vercel-dns.com`). Keep the Google Workspace MX/TXT records in Wix unchanged.
+- Publish with `vercel deploy --prod --skip-domain`, then assign only `willowpdf.com` and `www.willowpdf.com` to the new deployment, one at a time.
+- Afterwards, check that `wwilloww.ai` and `www.wwilloww.ai` still show Willow Nest.
+- Do not merge into `main` as a way to publish. `main` is behind the live site.
 
 ## Waitlist setup
 
