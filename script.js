@@ -162,7 +162,7 @@
         form.reset();
       } catch (error) {
         setStatus(
-          "We could not save your signup just now. Please try again, or email hello@wwilloww.ai.",
+          "We could not save your signup just now. Please try again, or email weepingwillowwhisperer@gmail.com.",
           true
         );
       } finally {

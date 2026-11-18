@@ -67,6 +67,11 @@ a:hover {
   color: var(--text);
 }
 
+/* Long addresses may break rather than push past the edge on narrow screens */
+a[href^="mailto:"] {
+  overflow-wrap: anywhere;
+}
+
 strong {
   font-weight: 600;
 }

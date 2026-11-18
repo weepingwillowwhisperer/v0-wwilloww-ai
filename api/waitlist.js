@@ -161,7 +161,7 @@ export default async function handler(req, res) {
     console.error('Waitlist submission failed:', error);
     return res.status(503).json({
       ok: false,
-      message: 'We could not save your signup just now. Please try again, or email hello@wwilloww.ai.',
+      message: 'We could not save your signup just now. Please try again, or email weepingwillowwhisperer@gmail.com.',
     });
   }
 }
